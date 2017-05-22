@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value="/home")
 public class IndexPageController {
       
+      @RequestMapping(value="index")
       public String index(HttpServletRequest request,HttpServletResponse response)
       {
-        return "sys/index";
+          return "sys/index";
       }
 }
