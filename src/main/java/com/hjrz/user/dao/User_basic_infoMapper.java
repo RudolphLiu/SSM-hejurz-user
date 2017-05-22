@@ -2,6 +2,7 @@ package com.hjrz.user.dao;
 
 import com.hjrz.user.entity.User_basic_info;
 import com.hjrz.user.entity.User_basic_infoExample;
+import com.hjrz.user.form.LoginUserForm;
 
 public interface User_basic_infoMapper {
     int countByExample(User_basic_infoExample example);
@@ -19,4 +20,7 @@ public interface User_basic_infoMapper {
     int updateByPrimaryKey(User_basic_info record);
     
     int selectPhoneAlive(Long user_login_phone);
+    
+    //用户登录
+    User_basic_info userLogin(LoginUserForm loginUserForm);
 }
