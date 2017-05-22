@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.core.internal.LoadingCache;
 import org.springframework.stereotype.Service;
 
+import com.alibaba.druid.support.logging.Log;
+import com.hjrz.user.constants.UserStateEnum;
 import com.hjrz.user.dao.User_basic_infoMapper;
 import com.hjrz.user.entity.User_basic_info;
 
@@ -41,5 +43,21 @@ public class UserBasicService {
              throw new Exception("该账号已存在");
            }
          return key;
+      }
+      
+      /**
+       * @Description (添加用户账户)
+       * @author RudolphLiu
+       * @Date 2017年5月22日 下午3:45:12
+       */
+      public void addUserBasicInfo(User_basic_info user_basic_info)throws Exception
+      {
+        Long phoneIntValue=Long.parseLong(user_basic_info.getUser_login_phone());
+        this.userPhoneAlive(phoneIntValue);
+        user_basic_info.setUser_info_state(UserStateEnum.EXISTENCE);
+        int key = user_basic_infoMapper.insert(user_basic_info);
+        if(key<1){
+          throw new Exception("添加用户失败，请联系管理员");
+        }
       }
 }

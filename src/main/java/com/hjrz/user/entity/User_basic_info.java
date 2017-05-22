@@ -2,6 +2,8 @@ package com.hjrz.user.entity;
 
 import java.util.Date;
 
+import com.hjrz.user.constants.UserStateEnum;
+
 public class User_basic_info {
     private Integer user_basic_Code;
 
@@ -9,7 +11,7 @@ public class User_basic_info {
 
     private String user_password;
 
-    private String user_info_state;
+    private UserStateEnum user_info_state;
 
     private Date create_time;
 
@@ -39,12 +41,12 @@ public class User_basic_info {
         this.user_password = user_password == null ? null : user_password.trim();
     }
 
-    public String getUser_info_state() {
-        return user_info_state;
+    public UserStateEnum getUser_info_state() {
+      return user_info_state;
     }
 
-    public void setUser_info_state(String user_info_state) {
-        this.user_info_state = user_info_state == null ? null : user_info_state.trim();
+    public void setUser_info_state(UserStateEnum user_info_state) {
+      this.user_info_state = user_info_state;
     }
 
     public Date getCreate_time() {
