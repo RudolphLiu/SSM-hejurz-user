@@ -5,7 +5,7 @@
     <id column="user_basic_Code" property="user_basic_Code" jdbcType="INTEGER" />
     <result column="user_login_phone" property="user_login_phone" jdbcType="VARCHAR" />
     <result column="user_password" property="user_password" jdbcType="VARCHAR" />
-    <result column="user_info_state" property="user_info_state" jdbcType="VARCHAR" />
+    <result column="user_info_state" property="user_info_state" jdbcType="VARCHAR" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
     <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
     <result column="last_login_time" property="last_login_time" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -51,14 +51,18 @@
     delete from user_basic_info
     where user_basic_Code = #{user_basic_Code,jdbcType=INTEGER}
   </delete>
+  
   <insert id="insert" parameterType="com.hjrz.user.entity.User_basic_info" >
-    insert into user_basic_info (user_basic_Code, user_login_phone, 
+    insert into user_basic_info (user_login_phone, 
       user_password, user_info_state, create_time, 
       last_login_time)
-    values (#{user_basic_Code,jdbcType=INTEGER}, #{user_login_phone,jdbcType=VARCHAR}, 
-      #{user_password,jdbcType=VARCHAR}, #{user_info_state,jdbcType=VARCHAR}, #{create_time,jdbcType=TIMESTAMP}, 
-      #{last_login_time,jdbcType=TIMESTAMP})
+    values (#{user_login_phone,jdbcType=VARCHAR}, 
+      #{user_password,jdbcType=VARCHAR},
+       #{user_info_state,jdbcType=VARCHAR,typeHandler=org.apache.ibatis.type.EnumTypeHandler},
+       NOW(), 
+       NOW()
   </insert>
+  
   <insert id="insertSelective" parameterType="com.hjrz.user.entity.User_basic_info" >
     insert into user_basic_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -116,6 +120,15 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+  
+   <select id="userLogin" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_basic_info
+    where user_login_phone = #{user_login_phone,jdbcType=VARCHAR} 
+    and user_password = #{user_password,jdbcType=VARCHAR} 
+  </select>
+  
   <update id="updateByPrimaryKeySelective" parameterType="com.hjrz.user.entity.User_basic_info" >
     update user_basic_info
     <set >

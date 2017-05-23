@@ -1,14 +1,13 @@
 package com.hjrz.user.service;
 
-import org.springframework.aop.ThrowsAdvice;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.internal.LoadingCache;
 import org.springframework.stereotype.Service;
 
-import com.alibaba.druid.support.logging.Log;
 import com.hjrz.user.constants.UserStateEnum;
 import com.hjrz.user.dao.User_basic_infoMapper;
 import com.hjrz.user.entity.User_basic_info;
+import com.hjrz.user.exception.SignException;
+import com.hjrz.user.util.EncryptUtil;
 
 /**
  * @ClassName UserBasicService
@@ -22,14 +21,26 @@ public class UserBasicService {
     
       @Autowired
       private User_basic_infoMapper user_basic_infoMapper;
-      
+    
       /**
        * @Description (注册)
        * @author RudolphLiu
        * @Date 2017年5月22日 下午2:35:23
        */
       public void addUserBasic(User_basic_info user_basic_info)throws Exception{
-          
+            Long phoneIntValue = Long.parseLong(user_basic_info.getUser_login_phone());
+            int alivekey = this.userPhoneAlive(phoneIntValue);
+            if(alivekey>0){
+              throw new SignException("该账号已存在");
+            }
+            //对用户输入的密码进行加密
+            String encryptPassword = EncryptUtil.getMD5String(user_basic_info.getUser_password());
+            user_basic_info.setUser_password(encryptPassword);
+            user_basic_info.setUser_info_state(UserStateEnum.EXISTENCE);
+            int key = user_basic_infoMapper.insert(user_basic_info);
+            if(key<1){
+              throw new SignException("系统异常，注册失败");
+            }
       }
       
       /**
@@ -45,19 +56,4 @@ public class UserBasicService {
          return key;
       }
       
-      /**
-       * @Description (添加用户账户)
-       * @author RudolphLiu
-       * @Date 2017年5月22日 下午3:45:12
-       */
-      public void addUserBasicInfo(User_basic_info user_basic_info)throws Exception
-      {
-        Long phoneIntValue=Long.parseLong(user_basic_info.getUser_login_phone());
-        this.userPhoneAlive(phoneIntValue);
-        user_basic_info.setUser_info_state(UserStateEnum.EXISTENCE);
-        int key = user_basic_infoMapper.insert(user_basic_info);
-        if(key<1){
-          throw new Exception("添加用户失败，请联系管理员");
-        }
-      }
 }

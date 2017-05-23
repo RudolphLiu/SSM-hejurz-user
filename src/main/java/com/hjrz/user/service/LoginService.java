@@ -34,7 +34,6 @@ public class LoginService {
           //取得用户输入的密码的MD5值，并拿去与库里的MD5值校验
           String encryptPassword = EncryptUtil.getMD5String(loginUserForm.getUser_password());
           loginUserForm.setUser_password(encryptPassword);
-          
           return null;
       }
 }

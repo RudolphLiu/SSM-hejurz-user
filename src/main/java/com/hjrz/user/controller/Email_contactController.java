@@ -15,7 +15,7 @@ import com.hjrz.user.service.Email_contactService;
 
 /**
  * @ClassName Email_contactController
- * @Description TODO(这里用一句话描述这个类的作用)
+ * @Description TODO()
  * @author RudolphLiu
  * @Date 2017年5月22日 上午10:53:26
  * @version 1.0.0
