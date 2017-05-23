@@ -14,7 +14,7 @@ import com.hjrz.user.entity.User_detail_info;
  * @Date 2017年5月22日 下午4:05:09
  * @version 1.0.0
  */
-@Service
+@Service("UserDetailService")
 public class UserDetailService {
     
       @Autowired

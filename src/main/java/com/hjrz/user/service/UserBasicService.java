@@ -16,12 +16,12 @@ import com.hjrz.user.util.EncryptUtil;
  * @Date 2017年5月22日 下午2:30:24
  * @version 1.0.0
  */
-@Service
+@Service("UserBasicService")
 public class UserBasicService {
     
       @Autowired
       private User_basic_infoMapper user_basic_infoMapper;
-    
+      
       /**
        * @Description (注册)
        * @author RudolphLiu

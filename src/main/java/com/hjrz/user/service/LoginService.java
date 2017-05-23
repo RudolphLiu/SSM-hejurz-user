@@ -22,7 +22,7 @@ import com.hjrz.user.util.EncryptUtil;
  * @Date 2017年5月22日 下午5:43:16
  * @version 1.0.0
  */
-@Service
+@Service("LoginService")
 public class LoginService {
     
       @Autowired

@@ -13,7 +13,7 @@
     <div id="navbar" class="navbar navbar-default">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" href="index.html"><img src="img/hjrzlogo.png" style="width: 190px; height: 47px;"></a> </div>
+        <a class="navbar-brand" href="index.html"><img src="<%=contextPath %>/images/hjrzlogo.png" style="width: 190px; height: 47px;"></a> </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="active"> <a href="#myCarousel">首页</a> </li>
@@ -41,13 +41,13 @@
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-			<img src="img/explogo1.jpg" alt="First slide">
+			<img src="<%=contextPath %>/images/explogo1.jpg" alt="First slide">
 		</div>
 		<div class="item">
-			<img src="img/explogo2.jpg" alt="Second slide">
+			<img src="<%=contextPath %>/images/explogo2.jpg" alt="Second slide">
 		</div>
 		<div class="item">
-			<img src="img/explogo4.jpg" alt="Third slide">
+			<img src="<%=contextPath %>/images/explogo4.jpg" alt="Third slide">
 		</div>
 	</div>
 	<!-- 轮播（Carousel）导航 -->
@@ -172,7 +172,7 @@
         <div class="col-sm-4">
           <ul class="plan">
             <li class="plan-name">ERP系统开发</li>
-            <li><img src="img/soft_1101.jpg"></li>
+            <li><img src="<%=contextPath %>/images/soft_1101.jpg"></li>
        			<li>
 						量身定制企业资源计划管理系统,提高企业生产力和竞争力,满足业务需要和市场要求。</li>
             <li class="plan-action"><span class="button-wrap">
@@ -184,7 +184,7 @@
         <div class="col-sm-4">
           <ul class="plan">
             <li class="plan-name">application开发</li>
-            <li><img src="img/soft_1102.jpg"></li>
+            <li><img src="<%=contextPath %>/images/soft_1102.jpg"></li>
             <li>精通各平台应用微信公众号开发，APP软件定制开发.有丰富的实战经验,品质保证。</li>
             <li class="plan-action"><span class="button-wrap">
 						    <a href="" class="button button-pill button-raised button-primary">查看</a>
@@ -195,7 +195,7 @@
         <div class="col-sm-4">
           <ul class="plan">
             <li class="plan-name">OA系统开发</li>
-            <li><img src="img/soft_1103.jpg"></li>
+            <li><img src="<%=contextPath %>/images/soft_1103.jpg"></li>
             <li>专业定制开发企业客户关系管理软件,应用快速开发平台帮助企业提高工作效率。</li>
             <li class="plan-action"> <span class="button-wrap">
 						    <a href="" class="button button-pill button-raised button-primary">查看</a>
