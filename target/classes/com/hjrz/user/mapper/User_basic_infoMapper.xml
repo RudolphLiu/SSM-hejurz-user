@@ -52,6 +52,7 @@
     where user_basic_Code = #{user_basic_Code,jdbcType=INTEGER}
   </delete>
   
+  <!-- 注册 -->
   <insert id="insert" parameterType="com.hjrz.user.entity.User_basic_info" >
     insert into user_basic_info (user_login_phone, 
       user_password, user_info_state, create_time, 
@@ -60,7 +61,7 @@
       #{user_password,jdbcType=VARCHAR},
        #{user_info_state,jdbcType=VARCHAR,typeHandler=org.apache.ibatis.type.EnumTypeHandler},
        NOW(), 
-       NOW()
+       NOW())
   </insert>
   
   <insert id="insertSelective" parameterType="com.hjrz.user.entity.User_basic_info" >

@@ -8,7 +8,8 @@ public interface User_basic_infoMapper {
     int countByExample(User_basic_infoExample example);
 
     int deleteByPrimaryKey(Integer user_basic_Code);
-
+    
+    //用户注册
     int insert(User_basic_info record);
 
     int insertSelective(User_basic_info record);
