@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>核聚瑞增</title>
 <%@include file="../common/share_static.jsp" %>
-<link href="/css/style_log.css" rel="stylesheet" type="text/css">
+<link href="<%=contextPath %>/css/style_log.css" rel="stylesheet" type="text/css">
 </head>
 <body class="login">
 	<%-- <div align="center">
@@ -15,29 +15,29 @@
 			<input type="submit" value="注册"/>
 	 	</form>
 	</div> --%>
-	 <div class="ad_m">
-		<img src="<%=contextPath %>/images/login/log_ad1.jpg"/>
+	<div class="ad_m">
+		<img src="<%=contextPath %>/images/login/log_guanggao1.jpg"/>
 	</div>
 	<!--登录框begin-->
 	<div class="login_m">
 	<div class="login_boder">
 	<div class="login_padding" id="login_model">
-	 				<form id="contact">
+	 				<form id="contact" action="" method="post">
 						<div class="form-group">
 							<label for="exampleInputEmail1">用户名：</label>
-							<input type="text" id="username" class="form-control" required autofocus placeholder="用户名">
+							<input type="text" id="username" class="form-control" required autofocus placeholder="用户名" autocomplete="off">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">密码：</label>
-							<input type="password" id="upassword" class="form-control" placeholder="密码" required>
+							<input type="password" id="upassword" class="form-control" placeholder="密码" required autocomplete="off">
 						</div>
 						<div class="checkbox">
 							<label>
 						      <input type="checkbox">记住密码
 						    </label>
 						</div>
-						<button type="submit" class="btn btn-default">提交</button>
-						<a>注册</a>
+						 <a href="http://www.bootcss.com/" class="button button-primary button-pill button-small">登录</a>
+						<a href="#" style="margin-left:120px">立即注册>>></a>
 					</form>
 	  </div>
 	</div>
