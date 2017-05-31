@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>核聚瑞增</title>
 <%@include file="../common/share_static.jsp" %>
+<link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/main.css" />
 </head>
 <body data-spy="scroll" data-target="#navbar">
 <!-- 导航栏begin -->

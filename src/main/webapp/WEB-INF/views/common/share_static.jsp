@@ -8,7 +8,6 @@
 <!-- 引入CSS文件 -->
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/bootstrap-buttons.css" />
-<link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/main.css" />
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/carousel.css" />
 
 <!-- 引入JS文件 -->

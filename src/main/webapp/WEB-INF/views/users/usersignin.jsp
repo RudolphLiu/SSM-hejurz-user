@@ -5,47 +5,77 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>核聚瑞增</title>
 <%@include file="../common/share_static.jsp" %>
-<link href="/css/style_log.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="<%=contextPath %>/css/signinfo.css"/>
 </head>
-<body class="login">
-	<%-- <div align="center">
-		<form action="<%=basePath %>signin/sign.do" method="post">
-	 		<p>手机号：</p><input type="text" name="user_login_phone"/>
-			<p>密码：</p><input type="password" name="user_password"/>
-			<input type="submit" value="注册"/>
-	 	</form>
-	</div> --%>
-	 <div class="ad_m">
-		<img src="Wopop_files/ABUIABACGAAggsiNrQUokMuclQcwoAs4-AI.jpg"/>
-	</div>
-	<!--登录框begin-->
-	<div class="login_m">
-	<div class="login_boder">
-	<div class="login_padding" id="login_model">
-	 				<form id="contact">
-						<div class="form-group">
-							<label for="exampleInputEmail1">用户名：</label>
-							<input type="text" id="username" class="form-control" required autofocus placeholder="用户名">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword1">密码：</label>
-							<input type="password" id="upassword" class="form-control" placeholder="密码" required>
-						</div>
-						<div class="checkbox">
-							<label>
-						      <input type="checkbox">记住密码
-						    </label>
-						</div>
-						<button type="submit" class="btn btn-default">提交</button>
-						<a>注册</a>
-					</form>
-	  </div>
-	</div>
-	</div>
-	<!--登录框end-->
+<body>
+	 <div class="container">
+				<div class="signform" style="align-content:center;">
+					<div align="center">
+						<img src="<%=contextPath %>/images/sign/signlogo.png"><br/>
+						<h4>新用户注册</h4>
+						<hr class="hru" />
+					</div>
+					<div class="textform">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<hr/>
+								<label class="col-sm-3 control-label">手机号码：</label>
+								<div class="col-sm-9">
+									<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">密码：</label>
+								<div class="col-sm-9">
+									<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">确认密码：</label>
+								<div class="col-sm-9">
+									<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">邮箱地址：</label>
+								<div class="col-sm-9">
+									<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">真实姓名：</label>
+								<div class="col-sm-9">
+									<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">性别：</label>
+								<div class="col-sm-9">
+									<label class="radio-inline">
+									  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">男
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">女
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">所在地址：</label>
+								<div class="col-sm-9">
+									<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+								</div>
+							</div>
+							<div class="form-group">
+							    <div class="col-sm-offset-4 col-sm-10">
+							      <a href="http://www.bootcss.com/" class="button button-highlight button-large">注册</a>
+							    </div>
+							</div>
+							
+						</form>
+					</div>
+				</div>
+			</div>
 </body>
-<script type="text/javascript">
-			document.getElementById('username').setCustomValidity("请输入用户名");
-			document.getElementById('upassword').setCustomValidity("请输入密码");
-</script>
 </html>
