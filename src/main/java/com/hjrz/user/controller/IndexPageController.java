@@ -17,7 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value="/home")
 public class IndexPageController {
       
-      @RequestMapping(value="index")
+      /**
+       * @Description (首页)
+       * @author RudolphLiu
+       * @Date 2017年5月31日 上午11:40:30
+       */
+      @RequestMapping(value="index.do")
       public String index(HttpServletRequest request,HttpServletResponse response)
       {
           return "sys/index";

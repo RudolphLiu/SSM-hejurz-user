@@ -2,9 +2,6 @@ package com.hjrz.user.service;
 
 import java.lang.reflect.InvocationTargetException;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +10,6 @@ import com.hjrz.user.entity.User_basic_info;
 import com.hjrz.user.exception.LoginException;
 import com.hjrz.user.exception.SYSException;
 import com.hjrz.user.form.LoginUserForm;
-import com.hjrz.user.util.EncryptUtil;
 
 /**
  * @ClassName LoginService
@@ -28,13 +24,16 @@ public class LoginService {
       @Autowired
       private User_basic_infoMapper user_basic_infoMapper;
       
-      public User_basic_info userLogin(LoginUserForm loginUserForm,HttpServletRequest request,HttpServletResponse response)
+      /**
+       * @Description (登录)
+       * @author RudolphLiu
+       * @Date 2017年5月31日 上午10:10:06
+       */
+      public User_basic_info userLogin(LoginUserForm loginUserForm)
         throws LoginException,SYSException,IllegalAccessException,InvocationTargetException
-      { 
-          //取得用户输入的密码的MD5值，并拿去与库里的MD5值校验
-          String encryptPassword = EncryptUtil.getMD5String(loginUserForm.getUser_password());
-          loginUserForm.setUser_password(encryptPassword);
-          return null;
+      {     
+          User_basic_info user_basic_info = user_basic_infoMapper.userLogin(loginUserForm);
+          return user_basic_info;
       }
 
       

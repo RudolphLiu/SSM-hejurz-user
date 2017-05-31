@@ -16,7 +16,7 @@
 	 	</form>
 	</div> --%>
 	 <div class="ad_m">
-		<img src="Wopop_files/ABUIABACGAAggsiNrQUokMuclQcwoAs4-AI.jpg"/>
+		<img src="<%=contextPath %>/images/login/log_ad1.jpg"/>
 	</div>
 	<!--登录框begin-->
 	<div class="login_m">

@@ -24,8 +24,8 @@
           <li> <a href="#contact">联系我们</a> </li>
         </ul>
 	        <div class="signbtn">
-	        <a href="http://www.bootcss.com/" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
-	     		</div>
+	        	<a href="<%=basePath %>login/touserlogin.do" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
+	     	</div>
         </div>
     </div>
   </div>

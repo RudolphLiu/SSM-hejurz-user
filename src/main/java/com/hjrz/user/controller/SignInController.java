@@ -33,6 +33,7 @@ public class SignInController {
        * @author RudolphLiu
        * @Date 2017年5月30日 下午9:47:20
        */
+      @RequestMapping(value="/toSign.do")
       public ModelAndView toSignIn(){
           ModelAndView modelAndView = new ModelAndView();
           try {
@@ -44,7 +45,6 @@ public class SignInController {
           }
          return modelAndView;
       }
-      
       
       /**
        * @Description (用户账号注册)
