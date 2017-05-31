@@ -6,7 +6,7 @@
     <result column="user_basic_Code" property="user_basic_Code" jdbcType="INTEGER" />
     <result column="user_email" property="user_email" jdbcType="VARCHAR" />
     <result column="user_realname" property="user_realname" jdbcType="VARCHAR" />
-    <result column="user_sex" property="user_sex" jdbcType="VARCHAR" />
+    <result column="user_sex" property="user_sex" jdbcType="VARCHAR" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
     <result column="user_address" property="user_address" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -95,7 +95,7 @@
         #{user_realname,jdbcType=VARCHAR},
       </if>
       <if test="user_sex != null" >
-        #{user_sex,jdbcType=VARCHAR},
+        #{user_sex,jdbcType=VARCHAR,typeHandler="org.apache.ibatis.type.EnumTypeHandler"},
       </if>
       <if test="user_address != null" >
         #{user_address,jdbcType=VARCHAR},

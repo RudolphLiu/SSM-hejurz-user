@@ -1,5 +1,7 @@
 package com.hjrz.user.entity;
 
+import com.hjrz.user.constants.GenderEnum;
+
 public class User_detail_info {
     private Integer user_detail_Code;
 
@@ -9,7 +11,7 @@ public class User_detail_info {
 
     private String user_realname;
 
-    private String user_sex;
+    private GenderEnum user_sex;
 
     private String user_address;
 
@@ -45,12 +47,12 @@ public class User_detail_info {
         this.user_realname = user_realname == null ? null : user_realname.trim();
     }
 
-    public String getUser_sex() {
-        return user_sex;
+    public GenderEnum getUser_sex() {
+      return user_sex;
     }
 
-    public void setUser_sex(String user_sex) {
-        this.user_sex = user_sex == null ? null : user_sex.trim();
+    public void setUser_sex(GenderEnum user_sex) {
+      this.user_sex = user_sex;
     }
 
     public String getUser_address() {

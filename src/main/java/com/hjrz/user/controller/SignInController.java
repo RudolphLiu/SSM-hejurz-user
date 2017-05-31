@@ -12,6 +12,7 @@ import com.hjrz.user.constants.CallStatusEnum;
 import com.hjrz.user.constants.UserStateEnum;
 import com.hjrz.user.data.ExchangeData;
 import com.hjrz.user.entity.User_basic_info;
+import com.hjrz.user.form.SignUserForm;
 import com.hjrz.user.service.SignInService;
 
 /**
@@ -52,10 +53,11 @@ public class SignInController {
        * @Date 2017年5月30日 下午10:30:30
        */
       @RequestMapping(value="/sign.do",method=RequestMethod.POST)
-      public ModelAndView sign(User_basic_info user_basic_info,HttpServletRequest request){
+      public ModelAndView sign(SignUserForm signUserForm,HttpServletRequest request){
            ModelAndView modelAndView = new ModelAndView();
            ExchangeData<Object> exchangeData = new ExchangeData<Object>();
           try {
+              
               user_basic_info.setUser_info_state(UserStateEnum.EXISTENCE);
               signInService.signIn(user_basic_info);
               modelAndView.addObject("exchangeData",exchangeData);
