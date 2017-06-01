@@ -17,6 +17,7 @@ import com.hjrz.user.entity.User_basic_info;
 import com.hjrz.user.entity.User_detail_info;
 import com.hjrz.user.form.SignUserForm;
 import com.hjrz.user.service.SignInService;
+import com.hjrz.user.service.UserBasicService;
 
 /**
  * @ClassName SignInController
@@ -55,26 +56,16 @@ public class SignInController {
        * @author RudolphLiu
        * @Date 2017年5月30日 下午10:30:30
        */
-      @ResponseBody
       @RequestMapping(value="/sign.do",method=RequestMethod.POST)
       public ModelAndView sign(SignUserForm signUserForm,HttpServletRequest request){
            ModelAndView modelAndView = new ModelAndView();
-           User_basic_info user_basic_info = new User_basic_info();
-           User_detail_info user_detail_info = new User_detail_info();
            ExchangeData<Object> exchangeData = new ExchangeData<Object>();
+           User_basic_info user_basic_info = new User_basic_info();
           try {
-              //user_basic_info传参
-              user_basic_info.setUser_login_phone(signUserForm.getUser_login_phone());
-              user_basic_info.setUser_password(signUserForm.getUser_password());
-              user_basic_info.setUser_info_state(UserStateEnum.EXISTENCE);
-              //user_detail_info传参
-              user_detail_info.setUser_email(signUserForm.getUser_email());
-              user_detail_info.setUser_realname(signUserForm.getUser_realname());
-              int GenderInt = Integer.parseInt(signUserForm.getUser_sex());
-              user_detail_info.setUser_sex(GenderInt==1?GenderEnum.MAN:GenderEnum.WOMAN);
-              user_detail_info.setUser_address(signUserForm.getUser_address());
-              signInService.signIn(user_basic_info, user_detail_info);
-              modelAndView.addObject("exchangeData",exchangeData);
+            user_basic_info.setUser_login_phone(signUserForm.getUser_login_phone());
+            user_basic_info.setUser_password(signUserForm.getUser_password());
+            user_basic_info.setUser_info_state(UserStateEnum.EXISTENCE);
+            signInService.signIn(user_basic_info);
           } catch (Exception e) {
               exchangeData.setCallStatus(CallStatusEnum.FAIL);
               exchangeData.setMessage("系统错误，请联系管理员");
