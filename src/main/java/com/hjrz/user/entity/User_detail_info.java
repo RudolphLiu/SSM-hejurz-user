@@ -15,6 +15,21 @@ public class User_detail_info {
 
     private String user_address;
 
+    public User_detail_info() {
+      super();
+      // TODO Auto-generated constructor stub
+    }
+
+    public User_detail_info(Integer user_basic_Code, String user_email,
+        String user_realname, GenderEnum user_sex, String user_address) {
+      super();
+      this.user_basic_Code = user_basic_Code;
+      this.user_email = user_email;
+      this.user_realname = user_realname;
+      this.user_sex = user_sex;
+      this.user_address = user_address;
+    }
+
     public Integer getUser_detail_Code() {
         return user_detail_Code;
     }
