@@ -91,10 +91,6 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
- <!-- 对dataSource 数据源进行事务管理 -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
-          p:dataSource-ref="dataSource"/>
-
 <!-- 定义拦截器，用来指定事物属性，级别，和异常处理 -->
 	<bean id="transactionInterceptor"
 		class="org.springframework.transaction.interceptor.TransactionInterceptor">
