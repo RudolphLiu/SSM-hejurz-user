@@ -12,15 +12,7 @@
 		 
 		 <mvc:default-servlet-handler />
 		 
-		 <context:component-scan base-package="com.hjrz.user">
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Component" />
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Controller" />
-		<context:exclude-filter type="annotation"
-			expression="org.springframework.stereotype.Repository" />
-		<context:exclude-filter type="annotation"
-			expression="org.springframework.stereotype.Service" />
+	<context:component-scan base-package="com.hjrz.user.controller">
 	</context:component-scan>
 
 	 <!-- 对模型视图添加前后缀 -->  

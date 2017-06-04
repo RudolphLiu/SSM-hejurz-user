@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -66,16 +68,16 @@ public class SignInController {
             user_basic_info.setUser_login_phone(signUserForm.getUser_login_phone());
             user_basic_info.setUser_password(signUserForm.getUser_password());
             user_basic_info.setUser_info_state(UserStateEnum.EXISTENCE);
-            int userId = signInService.signInForBasic(user_basic_info);
-            user_detail_info.setUser_basic_Code(userId);
+            
             user_detail_info.setUser_email(signUserForm.getUser_email());
             user_detail_info.setUser_realname(signUserForm.getUser_realname());
             user_detail_info.setUser_sex(signUserForm.getUser_sex().equals("1")?GenderEnum.MAN:GenderEnum.WOMAN);
             user_detail_info.setUser_address(signUserForm.getUser_address());
+            signInService.signInfo(user_basic_info, user_detail_info);
           } catch (Exception e) {
-              exchangeData.setCallStatus(CallStatusEnum.FAIL);
-              exchangeData.setMessage("系统错误，请联系管理员");
-              modelAndView.addObject("exchangeData",exchangeData);
+            exchangeData.setCallStatus(CallStatusEnum.FAIL);
+            exchangeData.setMessage("系统错误，请联系管理员");
+            modelAndView.addObject("exchangeData",exchangeData);
           }
           return modelAndView;
       }

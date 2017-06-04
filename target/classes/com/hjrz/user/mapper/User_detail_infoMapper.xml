@@ -52,13 +52,14 @@
     where user_detail_Code = #{user_detail_Code,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.hjrz.user.entity.User_detail_info" >
-    insert into user_detail_info (user_detail_Code, user_basic_Code, 
+    insert into user_detail_info (user_basic_Code, 
       user_email, user_realname, user_sex, 
       user_address)
-    values (#{user_detail_Code,jdbcType=INTEGER}, #{user_basic_Code,jdbcType=INTEGER}, 
+    values (#{user_basic_Code,jdbcType=INTEGER}, 
       #{user_email,jdbcType=VARCHAR}, #{user_realname,jdbcType=VARCHAR}, #{user_sex,jdbcType=VARCHAR}, 
       #{user_address,jdbcType=VARCHAR})
   </insert>
+  
   <insert id="insertSelective" parameterType="com.hjrz.user.entity.User_detail_info" >
     insert into user_detail_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
