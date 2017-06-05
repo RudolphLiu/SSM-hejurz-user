@@ -34,7 +34,7 @@
 <!-- 导航栏end -->
 
 <!-- 轮播横幅begin -->
-<section id="myCarousel" class="carousel slide">
+<section id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
     <ol class="carousel-indicators" style="margin-bottom: 50px;">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
