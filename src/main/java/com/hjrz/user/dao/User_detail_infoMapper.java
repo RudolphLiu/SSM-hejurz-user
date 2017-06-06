@@ -17,4 +17,6 @@ public interface User_detail_infoMapper {
     int updateByPrimaryKeySelective(User_detail_info record);
 
     int updateByPrimaryKey(User_detail_info record);
+    
+    User_detail_info selectByUserBasicID(Integer user_basic_Code);
 }

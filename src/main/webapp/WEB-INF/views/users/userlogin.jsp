@@ -18,7 +18,7 @@
 	 				<form id="contact" action="<%=basePath %>login/login.do" method="post">
 						<div class="form-group">
 							<label for="exampleInputEmail1">用户名：</label>
-							<input type="text" id="username" class="form-control" name="user_login_phone" required autofocus placeholder="用户名" autocomplete="off">
+							<input type="text" id="username" class="form-control" name="user_login_phone" required autofocus placeholder="用户名">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">密码：</label>
@@ -29,7 +29,7 @@
 						      <input type="checkbox">记住密码
 						    </label>
 						</div>
-						 <a class="button button-primary button-pill button-small">登录</a>
+						 <button type="submit" class="button button-primary button-pill button-small">登录</button>
 						<a href="<%=basePath %>signin/toSign.do" style="margin-left:120px">立即注册>>></a>
 					</form>
 	  </div>
@@ -37,8 +37,8 @@
 	</div>
 	<!--登录框end-->
 </body>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 			document.getElementById('username').setCustomValidity("请输入用户名");
 			document.getElementById('upassword').setCustomValidity("请输入密码");
-</script>
+</script> -->
 </html>

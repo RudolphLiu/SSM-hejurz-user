@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.hjrz.user.data.ExchangeData;
 import com.hjrz.user.entity.User_basic_info;
+import com.hjrz.user.entity.User_detail_info;
 import com.hjrz.user.form.LoginUserForm;
 import com.hjrz.user.service.LoginService;
 
@@ -50,6 +51,7 @@ public class LoginController {
         ExchangeData<Object> exchangeData = new ExchangeData<Object>();
         try {
              User_basic_info user_basic_info = loginService.userLogin(loginUserForm);
+             User_detail_info user_detail_info = loginService.getUserDetail(user_basic_info.getUser_basic_Code());
              exchangeData.markSuccess("登录成功!");
              modelAndView.addObject("exchangeData",exchangeData);
              modelAndView.addObject("user_basic_info",user_basic_info);

@@ -41,6 +41,15 @@
   <sql id="Base_Column_List" >
     user_detail_Code, user_basic_Code, user_email, user_realname, user_sex, user_address
   </sql>
+  
+  <!-- 通过Basic_id 获取详细信息 -->
+  <select id="selectByUserBasicID" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  	select 
+    <include refid="Base_Column_List" />
+    from user_detail_info
+    where user_basic_Code = #{user_basic_Code,jdbcType=INTEGER}
+  </select>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
