@@ -1,7 +1,5 @@
 package com.hjrz.user.form;
 
-import com.hjrz.user.constants.GenderEnum;
-
 /**
  * @ClassName SignUserForm
  * @Description TODO(这里用一句话描述这个类的作用)

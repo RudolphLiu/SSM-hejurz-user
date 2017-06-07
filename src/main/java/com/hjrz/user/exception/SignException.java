@@ -10,6 +10,11 @@ package com.hjrz.user.exception;
 public class SignException extends UserException{
 
   /**
+   * @Field @serialVersionUID : TODO(这里用一句话描述这个类的作用)
+   */
+  private static final long serialVersionUID = 2314401715161928713L;
+
+  /**
    * @Description TODO(这里用一句话描述这个方法的作用)
    */
   public SignException() {

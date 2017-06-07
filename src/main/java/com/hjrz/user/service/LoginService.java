@@ -3,10 +3,15 @@ package com.hjrz.user.service;
 import java.lang.reflect.InvocationTargetException;
 import java.security.KeyStore.PrivateKeyEntry;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.aop.ThrowsAdvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hjrz.user.constants.UserStateEnum;
 import com.hjrz.user.dao.User_basic_infoMapper;
 import com.hjrz.user.dao.User_detail_infoMapper;
 import com.hjrz.user.entity.User_basic_info;
@@ -30,16 +35,27 @@ public class LoginService {
       
       @Autowired
       private User_detail_infoMapper user_detail_infoMapper;
+      
       /**
        * @Description (登录)
        * @author RudolphLiu
        * @Date 2017年5月31日 上午10:10:06
        */
-      public User_basic_info userLogin(LoginUserForm loginUserForm)
+      public User_basic_info userLogin(LoginUserForm loginUserForm,HttpServletRequest request,HttpServletResponse response)
         throws LoginException,SYSException,IllegalAccessException,InvocationTargetException
       {
           User_basic_info user_basic_info = user_basic_infoMapper.userLogin(loginUserForm);
-          return user_basic_info;
+          if(user_basic_info == null){
+              throw new LoginException("手机号或密码不正确");
+          }
+          if(user_basic_info.getUser_info_state()!=UserStateEnum.EXISTENCE){
+              throw new LoginException("账户"+loginUserForm.getUser_login_phone()+"不可用，请联系管理员");
+          }
+          User_detail_info user_detail_info = this.getUserDetail(user_basic_info.getUser_basic_Code());
+          HttpSession session = request.getSession();
+          session.setAttribute("user_basic_info",user_basic_info);
+          session.setAttribute("user_detail_info",user_detail_info);
+          return null;
       }
 
       /**
@@ -48,7 +64,7 @@ public class LoginService {
        * @Date 2017年6月6日 下午9:21:12
        */
       public User_detail_info getUserDetail(int user_basic_Code)
-        throws SYSException,IllegalAccessException,InvocationTargetException
+        throws LoginException,SYSException,IllegalAccessException,InvocationTargetException
       {
           if(user_basic_Code==0||Integer.toString(user_basic_Code).equals("")){
               throw new SYSException("系统异常，请联系管理员");

@@ -28,7 +28,7 @@
 	        </div>
     </div>
       <c:choose>
-        	<c:when test="${user_basic_info.user_login_phone}!=null">
+        	<c:when test="${not empty user_basic_info.user_login_phone}">
         		<div class="userbtn">
         			<div class="dropdown">
 							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -45,7 +45,7 @@
 					</div>
         		</div>
         	</c:when>
-        	<c:when test="${user_basic_info.user_login_phone}!=null && ${user_detail_info.user_realname}!=null">
+        	<c:when test="${not empty user_basic_info.user_login_phone} && ${not empty user_detail_info.user_realname}">
         		<div class="userbtn">
         			<div class="dropdown">
 							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -65,7 +65,7 @@
         	<c:otherwise>
         	<div class="userbtn">
         		<div class="dropdown">
-					<a href="http://www.bootcss.com/" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
+					<a href="<%=basePath %>login/touserlogin.do" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
 				</div>
 			</div>
         	</c:otherwise>

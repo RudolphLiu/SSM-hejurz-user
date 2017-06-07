@@ -20,7 +20,7 @@ public interface User_basic_infoMapper {
 
     int updateByPrimaryKey(User_basic_info record);
     
-    int selectPhoneAlive(Long user_login_phone);
+    int selectPhoneAlive(String user_login_phone);
     
     //用户登录
     User_basic_info userLogin(LoginUserForm loginUserForm);

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hjrz.user.data.ExchangeData;
-import com.hjrz.user.entity.User_basic_info;
-import com.hjrz.user.entity.User_detail_info;
+import com.hjrz.user.exception.LoginException;
+import com.hjrz.user.exception.SYSException;
 import com.hjrz.user.form.LoginUserForm;
 import com.hjrz.user.service.LoginService;
 
@@ -45,22 +45,20 @@ public class LoginController {
        * @Date 2017年5月31日 上午10:29:17
        */
       @RequestMapping(value="/login.do",method=RequestMethod.POST)
-      public ModelAndView login(LoginUserForm loginUserForm)
+      public ModelAndView login(LoginUserForm loginUserForm,HttpServletRequest request,HttpServletResponse response)
       {
         ModelAndView modelAndView = new ModelAndView();
         ExchangeData<Object> exchangeData = new ExchangeData<Object>();
         try {
-             User_basic_info user_basic_info = loginService.userLogin(loginUserForm);
-             User_detail_info user_detail_info = loginService.getUserDetail(user_basic_info.getUser_basic_Code());
+             loginService.userLogin(loginUserForm, request, response);
              exchangeData.markSuccess("登录成功!");
-             modelAndView.addObject("exchangeData",exchangeData);
-             modelAndView.addObject("user_basic_info",user_basic_info);
-             modelAndView.addObject("user_detail_info",user_detail_info);
              modelAndView.setViewName("sys/index");
-        } catch (Exception e) {
-              exchangeData.markFail("登录失败，用户名或密码错误");
-             modelAndView.addObject("exchangeData",exchangeData);
-        }
+        }catch (LoginException e) {
+            exchangeData.markException(e.getMessage(),e);
+        }catch (Exception e) {
+          exchangeData.markException(e);
+        } 
+        modelAndView.addObject("exchangeData",exchangeData);
         return modelAndView;
       }
 }

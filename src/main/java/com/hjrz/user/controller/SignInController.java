@@ -17,6 +17,7 @@ import com.hjrz.user.constants.UserStateEnum;
 import com.hjrz.user.data.ExchangeData;
 import com.hjrz.user.entity.User_basic_info;
 import com.hjrz.user.entity.User_detail_info;
+import com.hjrz.user.exception.SignException;
 import com.hjrz.user.form.SignUserForm;
 import com.hjrz.user.service.SignInService;
 import com.hjrz.user.service.UserBasicService;
@@ -65,6 +66,7 @@ public class SignInController {
            User_basic_info user_basic_info = new User_basic_info();
            User_detail_info user_detail_info = new User_detail_info();
           try {
+            signInService.userPhoneAlive(signUserForm.getUser_login_phone());
             user_basic_info.setUser_login_phone(signUserForm.getUser_login_phone());
             user_basic_info.setUser_password(signUserForm.getUser_password());
             user_basic_info.setUser_info_state(UserStateEnum.EXISTENCE);
@@ -73,7 +75,11 @@ public class SignInController {
             user_detail_info.setUser_realname(signUserForm.getUser_realname());
             user_detail_info.setUser_sex(signUserForm.getUser_sex().equals("1")?GenderEnum.MAN:GenderEnum.WOMAN);
             user_detail_info.setUser_address(signUserForm.getUser_address());
-            signInService.signInfo(user_basic_info, user_detail_info);
+            signInService.signInfo(user_basic_info,user_detail_info);
+          } catch (SignException e) {
+            exchangeData.setCallStatus(CallStatusEnum.FAIL);
+            exchangeData.setMessage("该手机号已存在");
+            modelAndView.addObject("exchangeData",exchangeData);
           } catch (Exception e) {
             exchangeData.setCallStatus(CallStatusEnum.FAIL);
             exchangeData.setMessage("系统错误，请联系管理员");
