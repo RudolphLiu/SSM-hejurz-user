@@ -28,24 +28,14 @@
 	        </div>
     </div>
       <c:choose>
-        	<c:when test="${not empty user_basic_info.user_login_phone}">
-        		<div class="userbtn">
-        			<div class="dropdown">
-							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								${user_basic_info.user_login_phone}
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#">Separated link</a></li>
-							</ul>
-					</div>
-        		</div>
+        	<c:when test="${empty user_basic_info.user_login_phone}">
+        	<div class="userbtn">
+        		<div class="dropdown">
+					<a href="<%=basePath %>login/touserlogin.do" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
+				</div>
+			</div>
         	</c:when>
-        	<c:when test="${not empty user_basic_info.user_login_phone} && ${not empty user_detail_info.user_realname}">
+        	<c:when test="${not empty user_detail_info.user_realname}">
         		<div class="userbtn">
         			<div class="dropdown">
 							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -63,11 +53,21 @@
         		</div>
         	</c:when>
         	<c:otherwise>
-        	<div class="userbtn">
-        		<div class="dropdown">
-					<a href="<%=basePath %>login/touserlogin.do" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
-				</div>
-			</div>
+        		<div class="userbtn">
+        			<div class="dropdown">
+							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								${user_basic_info.user_login_phone}
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+					</div>
+        		</div>
         	</c:otherwise>
         </c:choose>
   </div>

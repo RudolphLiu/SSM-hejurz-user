@@ -72,4 +72,21 @@ public class LoginService {
           User_detail_info user_detail_info = user_detail_infoMapper.selectByUserBasicID(user_basic_Code);
           return user_detail_info;
       }
+      
+      /**
+       * @Description (用户登出，注销...)
+       * @author RudolphLiu
+       * @Date 2017年6月7日 下午5:31:32
+       */
+      public void logout(HttpServletRequest request,HttpServletResponse response)
+        throws LoginException,SYSException,IllegalAccessException,InvocationTargetException
+      {
+          HttpSession session = request.getSession();
+          User_basic_info user_basic_info = (User_basic_info) session.getAttribute("user_basic_info");
+          User_detail_info user_detail_info = (User_detail_info) session.getAttribute("user_detail_info");
+          if(user_basic_info!=null || user_detail_info!=null){
+              session.removeAttribute("user_basic_info");
+              session.removeAttribute("user_detail_info");
+          }
+      }
 }
