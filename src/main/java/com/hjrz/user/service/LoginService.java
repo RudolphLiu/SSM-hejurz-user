@@ -37,7 +37,7 @@ public class LoginService {
        */
       public User_basic_info userLogin(LoginUserForm loginUserForm)
         throws LoginException,SYSException,IllegalAccessException,InvocationTargetException
-      {     
+      {
           User_basic_info user_basic_info = user_basic_infoMapper.userLogin(loginUserForm);
           return user_basic_info;
       }

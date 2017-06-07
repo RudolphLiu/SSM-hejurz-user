@@ -1,11 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>核聚瑞增</title>
 <%@include file="../common/share_static.jsp" %>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/main.css" />
+<link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/signinfo.css"/>
 </head>
 <body data-spy="scroll" data-target="#navbar">
 <!-- 导航栏begin -->
@@ -14,26 +15,61 @@
     <div id="navbar" class="navbar navbar-default">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" href="index.html"><img src="<%=contextPath %>/images/hjrzlogo.png" style="width: 190px; height: 47px;"></a> </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"> <a href="#myCarousel">首页</a> </li>
-          <li> <a href="#services">服务简介</a> </li>
-          <li> <a href="#portfolio">硬件推广</a> </li>
-          <li> <a href="#pricing">软件定制</a> </li>
-          <li> <a href="#about-us">采购专栏</a> </li>
-          <li> <a href="#contact">联系我们</a> </li>
-        </ul>
-        <c:if test="${}">
-        	
-        </c:if>
-        <c:if test="">
-        	<div class="signbtn">
-	        	<a href="<%=basePath %>login/touserlogin.do" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
-	     	</div>
-        </c:if>
-        </div>
+        <a class="navbar-brand" href="index.html"><img src="/images/hjrzlogo.png" style="width: 190px; height: 47px;"></a> </div>
+	      <div class="collapse navbar-collapse">
+			        <ul class="nav navbar-nav">
+			          <li class="active"> <a href="#myCarousel">首页</a> </li>
+			          <li> <a href="#services">服务简介</a> </li>
+			          <li> <a href="#portfolio">硬件推广</a> </li>
+			          <li> <a href="#pricing">软件定制</a> </li>
+			          <li> <a href="#about-us">采购专栏</a> </li>
+			          <li> <a href="#contact">联系我们</a> </li>
+			        </ul>
+	        </div>
     </div>
+      <c:choose>
+        	<c:when test="${user_basic_info.user_login_phone}!=null">
+        		<div class="userbtn">
+        			<div class="dropdown">
+							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								${user_basic_info.user_login_phone}
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+					</div>
+        		</div>
+        	</c:when>
+        	<c:when test="${user_basic_info.user_login_phone}!=null && ${user_detail_info.user_realname}!=null">
+        		<div class="userbtn">
+        			<div class="dropdown">
+							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								${user_detail_info.user_realname}
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+					</div>
+        		</div>
+        	</c:when>
+        	<c:otherwise>
+        	<div class="userbtn">
+        		<div class="dropdown">
+					<a href="http://www.bootcss.com/" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
+				</div>
+			</div>
+        	</c:otherwise>
+        </c:choose>
   </div>
 </header>
 <!-- 导航栏end -->
@@ -252,19 +288,19 @@
             <div class="row">
               <div class="col-sm-4">
                 <div class="member">
-                  <p><img class="img-responsive img-thumbnail img-circle" src="images/team3.jpg" alt=""></p>
+                  <p><img class="img-responsive img-thumbnail img-circle"></p>
                   <h3>David Robbins<small class="designation">Co-Founder</small></h3>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="member">
-                  <p><img class="img-responsive img-thumbnail img-circle" src="images/team1.jpg" alt=""></p>
+                  <p><img class="img-responsive img-thumbnail img-circle"></p>
                   <h3>Philip Mejia<small class="designation">Marketing Manager</small></h3>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="member">
-                  <p><img class="img-responsive img-thumbnail img-circle" src="images/team2.jpg" alt=""></p>
+                  <p><img class="img-responsive img-thumbnail img-circle" ></p>
                   <h3>Charles Erickson<small class="designation">Support Manager</small></h3>
                 </div>
               </div>

@@ -55,6 +55,7 @@ public class LoginController {
              exchangeData.markSuccess("登录成功!");
              modelAndView.addObject("exchangeData",exchangeData);
              modelAndView.addObject("user_basic_info",user_basic_info);
+             modelAndView.addObject("user_detail_info",user_detail_info);
              modelAndView.setViewName("sys/index");
         } catch (Exception e) {
               exchangeData.markFail("登录失败，用户名或密码错误");
@@ -62,5 +63,4 @@ public class LoginController {
         }
         return modelAndView;
       }
-      
 }
