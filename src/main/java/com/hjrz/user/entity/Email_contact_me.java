@@ -13,10 +13,6 @@ public class Email_contact_me {
 
     private String link_handle_state;
 
-    private Date handle_time;
-
-    private String handle_mode;
-
     private String link_message;
 
     public Integer getLinkCode() {
@@ -59,22 +55,6 @@ public class Email_contact_me {
         this.link_handle_state = link_handle_state == null ? null : link_handle_state.trim();
     }
 
-    public Date getHandle_time() {
-        return handle_time;
-    }
-
-    public void setHandle_time(Date handle_time) {
-        this.handle_time = handle_time;
-    }
-
-    public String getHandle_mode() {
-        return handle_mode;
-    }
-
-    public void setHandle_mode(String handle_mode) {
-        this.handle_mode = handle_mode == null ? null : handle_mode.trim();
-    }
-
     public String getLink_message() {
         return link_message;
     }
@@ -100,8 +80,6 @@ public class Email_contact_me {
             && (this.getLink_user_email() == null ? other.getLink_user_email() == null : this.getLink_user_email().equals(other.getLink_user_email()))
             && (this.getCreate_time() == null ? other.getCreate_time() == null : this.getCreate_time().equals(other.getCreate_time()))
             && (this.getLink_handle_state() == null ? other.getLink_handle_state() == null : this.getLink_handle_state().equals(other.getLink_handle_state()))
-            && (this.getHandle_time() == null ? other.getHandle_time() == null : this.getHandle_time().equals(other.getHandle_time()))
-            && (this.getHandle_mode() == null ? other.getHandle_mode() == null : this.getHandle_mode().equals(other.getHandle_mode()))
             && (this.getLink_message() == null ? other.getLink_message() == null : this.getLink_message().equals(other.getLink_message()));
     }
 
@@ -114,8 +92,6 @@ public class Email_contact_me {
         result = prime * result + ((getLink_user_email() == null) ? 0 : getLink_user_email().hashCode());
         result = prime * result + ((getCreate_time() == null) ? 0 : getCreate_time().hashCode());
         result = prime * result + ((getLink_handle_state() == null) ? 0 : getLink_handle_state().hashCode());
-        result = prime * result + ((getHandle_time() == null) ? 0 : getHandle_time().hashCode());
-        result = prime * result + ((getHandle_mode() == null) ? 0 : getHandle_mode().hashCode());
         result = prime * result + ((getLink_message() == null) ? 0 : getLink_message().hashCode());
         return result;
     }
