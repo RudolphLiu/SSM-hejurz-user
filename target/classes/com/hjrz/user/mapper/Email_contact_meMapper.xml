@@ -4,9 +4,9 @@
   <resultMap id="BaseResultMap" type="com.hjrz.user.entity.Email_contact_me" >
     <id column="linkCode" property="linkCode" jdbcType="INTEGER" />
     <result column="link_user_name" property="link_user_name" jdbcType="VARCHAR" />
-    <result column="link_user_email" property="link_user_email" jdbcType="VARCHAR" />
+    <result column="link_user_email" property="link_user_email" jdbcType="VARCHAR"/>
     <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
-    <result column="link_handle_state" property="link_handle_state" jdbcType="VARCHAR" />
+    <result column="link_handle_state" property="link_handle_state" jdbcType="VARCHAR" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.hjrz.user.entity.Email_contact_me" extends="BaseResultMap" >
     <result column="link_message" property="link_message" jdbcType="LONGVARCHAR" />
@@ -59,11 +59,15 @@
     where linkCode = #{linkCode,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.hjrz.user.entity.Email_contact_me" >
-    insert into email_contact_me (linkCode, link_user_name, link_user_email, 
-      create_time, link_handle_state, link_message
+    insert into email_contact_me (linkCode,link_user_name,link_user_email, 
+       link_handle_state,link_message,create_time
       )
-    values (#{linkCode,jdbcType=INTEGER}, #{link_user_name,jdbcType=VARCHAR}, #{link_user_email,jdbcType=VARCHAR}, 
-      #{create_time,jdbcType=TIMESTAMP}, #{link_handle_state,jdbcType=VARCHAR}, #{link_message,jdbcType=LONGVARCHAR}
+    values (#{linkCode,jdbcType=INTEGER},
+     	#{link_user_name,jdbcType=VARCHAR},
+      	#{link_user_email,jdbcType=VARCHAR}, 
+        #{link_handle_state,jdbcType=VARCHAR}, 
+        #{link_message,jdbcType=LONGVARCHAR},
+        NOW()
       )
   </insert>
   <insert id="insertSelective" parameterType="com.hjrz.user.entity.Email_contact_me" >
