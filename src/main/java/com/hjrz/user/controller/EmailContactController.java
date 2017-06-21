@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hjrz.user.data.ExchangeData;
@@ -29,6 +30,7 @@ public class EmailContactController {
        * @author RudolphLiu
        * @Date 2017年6月8日 下午5:24:25
        */
+      @ResponseBody
       @RequestMapping(value="/insertFeedBack.do",method=RequestMethod.POST)
       public ModelAndView insertUserContact(UserFeedBackForm userFeedBackForm)
       {

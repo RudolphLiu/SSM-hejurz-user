@@ -325,23 +325,23 @@
           <h1>通知我们</h1>
           <p>请将您的需求、建议发送给我们，留下您的电子邮箱，在我们收到之后会给您回复</p>
           <div class="status alert alert-success" style="display: none"></div>
-          <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+          <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="<%=basePath %>userContact/insertFeedBack.do" role="form">
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
-                  <input type="text" class="form-control" required="required" placeholder="如何称呼您">
+                  <input type="text" class="form-control" required="required" placeholder="如何称呼您" style="color:#fff" name="link_user_name">
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
-                  <input type="text" class="form-control" required="required" placeholder="您的电子邮箱">
+                  <input type="text" class="form-control" required="required" placeholder="您的电子邮箱" style="color:#fff" name="link_user_email">
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12">
                 <div class="form-group">
-                  <textarea name="message" id="message" required class="form-control" rows="8" placeholder="请输入信息"  style="resize:none" ></textarea>
+                  <textarea name="message" id="message" required class="form-control" rows="8" placeholder="请输入信息"  style="color:#fff;resize:none" ></textarea>
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-danger btn-lg">发送</button>

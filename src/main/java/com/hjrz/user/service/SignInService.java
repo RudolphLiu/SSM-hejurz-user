@@ -2,13 +2,12 @@ package com.hjrz.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.hjrz.user.dao.User_basic_infoMapper;
 import com.hjrz.user.dao.User_detail_infoMapper;
 import com.hjrz.user.entity.User_basic_info;
 import com.hjrz.user.entity.User_detail_info;
+import com.hjrz.user.exception.SYSException;
 import com.hjrz.user.exception.SignException;
 
 /**
@@ -32,7 +31,7 @@ public class SignInService {
          * @author RudolphLiu
          * @Date 2017年6月7日 上午11:54:40
          */
-        public void userPhoneAlive(String user_login_phone)throws SignException{
+        public void userPhoneAlive(String user_login_phone)throws SignException,SYSException{
             int alivecount = user_basic_infoMapper.selectPhoneAlive(user_login_phone);
             if(alivecount>0){
                 throw new SignException("当前手机号码已存在");

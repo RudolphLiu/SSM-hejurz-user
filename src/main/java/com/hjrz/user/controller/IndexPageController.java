@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @ClassName IndexPageController
- * @Description TODO(这里用一句话描述这个类的作用)
+ * @Description TODO(首页控制器)
  * @author RudolphLiu
  * @Date 2017年5月22日 下午4:57:15
  * @version 1.0.0

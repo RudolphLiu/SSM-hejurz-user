@@ -17,6 +17,7 @@ import com.hjrz.user.constants.UserStateEnum;
 import com.hjrz.user.data.ExchangeData;
 import com.hjrz.user.entity.User_basic_info;
 import com.hjrz.user.entity.User_detail_info;
+import com.hjrz.user.exception.SYSException;
 import com.hjrz.user.exception.SignException;
 import com.hjrz.user.form.SignUserForm;
 import com.hjrz.user.service.SignInService;
@@ -76,7 +77,7 @@ public class SignInController {
             user_detail_info.setUser_sex(signUserForm.getUser_sex().equals("1")?GenderEnum.MAN:GenderEnum.WOMAN);
             user_detail_info.setUser_address(signUserForm.getUser_address());
             signInService.signInfo(user_basic_info,user_detail_info);
-          } catch (SignException e) {
+          } catch (SignException  | SYSException e) {
             exchangeData.setCallStatus(CallStatusEnum.FAIL);
             exchangeData.setMessage("该手机号已存在");
             modelAndView.addObject("exchangeData",exchangeData);
