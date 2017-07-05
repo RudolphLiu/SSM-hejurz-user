@@ -1,6 +1,12 @@
 package com.hjrz.user.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.hjrz.user.dao.DynamicMapper;
+import com.hjrz.user.entity.Dynamic;
 
 /**
  * @ClassName DynamicService
@@ -11,4 +17,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DynamicService {
+  
+    @Autowired
+    private DynamicMapper dynamicMapper;
+    
+    public List<Dynamic> findBycontion(){
+      return null;
+    } 
 }
