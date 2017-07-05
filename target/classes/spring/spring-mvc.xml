@@ -8,9 +8,9 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-		 <mvc:annotation-driven />
+	<mvc:annotation-driven />
 		 
-		 <mvc:default-servlet-handler />
+	<mvc:default-servlet-handler />
 		 
 	<context:component-scan base-package="com.hjrz.user">
 	</context:component-scan>
@@ -31,8 +31,13 @@
     <!-- 配置springMVC处理上传文件的信息 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="defaultEncoding" value="utf-8"/>
-        <property name="maxUploadSize" value="10485760000"/>
+        <property name="maxUploadSize" value="1073741824"/>
+        <property name="maxUploadSizePerFile" value="10485760000"/>
         <property name="maxInMemorySize" value="40960"/>
     </bean>
 
+	<!-- 异常解析器 -->
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="defaultErrorView" value="/error.jsp"/>
+	</bean>
 </beans>
