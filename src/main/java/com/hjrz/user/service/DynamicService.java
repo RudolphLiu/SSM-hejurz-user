@@ -23,5 +23,5 @@ public class DynamicService {
     
     public List<Dynamic> findBycontion(){
       return null;
-    } 
+    }
 }
