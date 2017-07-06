@@ -55,6 +55,29 @@
     from dynamic
     where dyCode = #{dyCode,jdbcType=INTEGER}
   </select>
+  
+   <select id="selectByCondition" resultMap="BaseResultMap"  
+  	parameterType="com.hjrz.user.data.DynamicQuery">
+  		select
+  		<include refid="Base_Column_List"/>
+  		from dynamic 
+  		<where>
+	  		<if test="dyTitle!=null">
+				and dyTitle like CONCAT('%',#{dyTitle,jdbcType=VARCHAR},'%')
+			</if> 
+			<if test="dycontent!=null">
+	  			and dycontent like CONCAT('%',#{dycontent,jdbcType=VARCHAR},'%')
+	  		</if>
+	  		<if test="create_admin!=null">
+	  			and create_admin like CONCAT('%',#{create_admin,jdbcType=VARCHAR},'%')
+	  		</if>
+	  		<if test="dyAliveState!=null">
+	  			and dyAliveState = #{dyAliveState,jdbcType=VARCHAR,typeHandler=org.apache.ibatis.type.EnumTypeHandler}
+	  		</if>
+  		</where>
+  	</select>
+  
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from dynamic
     where dyCode = #{dyCode,jdbcType=INTEGER}

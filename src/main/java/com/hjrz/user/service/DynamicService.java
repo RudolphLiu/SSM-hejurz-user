@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hjrz.user.dao.DynamicMapper;
+import com.hjrz.user.data.DynamicQuery;
 import com.hjrz.user.entity.Dynamic;
 
 /**
@@ -21,7 +22,13 @@ public class DynamicService {
     @Autowired
     private DynamicMapper dynamicMapper;
     
-    public List<Dynamic> findBycontion(){
+    public List<Dynamic> findBycontion(DynamicQuery dynamicQuery){
+      if(dynamicQuery.getDyTitle()==""){
+        dynamicQuery.setDyTitle(null);
+      }
+      if(dynamicQuery.getCreate_admin()==""){
+        dynamicQuery.setCreate_admin(null);
+      }
       return null;
     }
 }
