@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hjrz.user.dao.ServicerMapper" >
+  <resultMap id="BaseResultMap" type="com.hjrz.user.entity.Servicer" >
+    <id column="serverCode" property="serverCode" jdbcType="INTEGER" />
+    <result column="serverName" property="serverName" jdbcType="VARCHAR" />
+    <result column="serverType" property="serverType" jdbcType="INTEGER" />
+    <result column="serverState" property="serverState" jdbcType="VARCHAR" />
+    <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <resultMap id="QueryforListMap" type="com.hjrz.user.model.ServicerModel" >
+    <id column="serverCode" property="serverCode" jdbcType="INTEGER" />
+    <result column="serverName" property="serverName" jdbcType="VARCHAR" />
+    <result column="typeName" property="typeName" jdbcType="VARCHAR" />
+    <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
+    <result column="siProcessor" property="siProcessor" jdbcType="VARCHAR" />
+    <result column="cpuMixNumber" property="cpuMixNumber" jdbcType="VARCHAR" />
+    <result column="sibrandName" property="sibrandName" jdbcType="VARCHAR" />
+    <result column="siSize" property="siSize" jdbcType="VARCHAR" />
+    <result column="sihardamount" property="sihardamount" jdbcType="VARCHAR" />
+    <result column="sioperSystem" property="sioperSystem" jdbcType="VARCHAR" />
+    <result column="siCPURAM" property="siCPURAM" jdbcType="VARCHAR" />
+    <result column="productdesc" property="productdesc" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.hjrz.user.model.ServicerModel" extends="QueryforListMap" >
+    <result column="siDetails" property="siDetails" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  
+  <select id="queryforServerInfo" resultMap="QueryforListMap" 
+  		parameterType="com.hjrz.user.form.ServicerQuery">  
+      SELECT
+			s.serverCode,
+			s.serverName,
+			st.typeName,
+			s.create_time,
+			si.siProcessor,
+			si.cpuMixNumber,
+			si.sibrandName,
+			si.siSize,
+			si.sihardamount,
+			si.sioperSystem,
+			si.siCPURAM,
+			si.productdesc,
+			si.siDetails
+		FROM
+			servicer s
+		LEFT JOIN server_info si ON s.serverCode = si.serverCode
+		LEFT JOIN servertype st ON s.serverType = st.typeCode
+        <where>
+	        <if test="serverName!=null">
+				and s.serverName like CONCAT('%',#{serverName,jdbcType=VARCHAR},'%')
+			</if>
+			<if test="typeName!=null">
+  				and st.typeName = like CONCAT('%',#{typeName,jdbcType=VARCHAR},'%')
+	  		</if>
+	  		<if test="sibrandName!=null">
+	  			and si.sibrandName = like CONCAT('%',#{sibrandName,jdbcType=VARCHAR},'%')
+	  		</if>
+	  		<if test="siSize!=null">
+	  			and si.siSize = like CONCAT('%',#{siSize,jdbcType=VARCHAR},'%')
+	  		</if>
+	  		<if test="sihardamount!=null">
+	  			and si.sihardamount = like CONCAT('%',#{sihardamount,jdbcType=VARCHAR},'%')
+	  		</if>
+	  		<if test="sioperSystem!=null">
+	  			and si.sioperSystem = like CONCAT('%',#{sioperSystem,jdbcType=VARCHAR},'%')
+	  		</if>
+	  		<if test="siCPURAM!=null">
+	  			and si.siCPURAM = like CONCAT('%',#{siCPURAM,jdbcType=VARCHAR},'%')
+	  		</if>
+	  		<if test="productdesc!=null">
+	  			and si.productdesc = like CONCAT('%',#{productdesc,jdbcType=VARCHAR},'%')
+	  		</if>
+	  		<if test="siDetails!=null">
+	  			and si.siDetails = like CONCAT('%',#{siDetails,jdbcType=VARCHAR},'%')
+	  		</if>
+        </where>
+    </select>
+  
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    serverCode, serverName, serverType, serverState, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from servicer
+    where serverCode = #{serverCode,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from servicer
+    where serverCode = #{serverCode,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hjrz.user.entity.Servicer" >
+    <selectKey resultType="java.lang.Integer" keyProperty="serverCode" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into servicer (serverName, serverType, serverState, 
+      create_time)
+    values (#{serverName,jdbcType=VARCHAR}, #{serverType,jdbcType=INTEGER}, #{serverState,jdbcType=VARCHAR}, 
+      #{create_time,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hjrz.user.entity.Servicer" >
+    <selectKey resultType="java.lang.Integer" keyProperty="serverCode" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into servicer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="serverName != null" >
+        serverName,
+      </if>
+      <if test="serverType != null" >
+        serverType,
+      </if>
+      <if test="serverState != null" >
+        serverState,
+      </if>
+      <if test="create_time != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="serverName != null" >
+        #{serverName,jdbcType=VARCHAR},
+      </if>
+      <if test="serverType != null" >
+        #{serverType,jdbcType=INTEGER},
+      </if>
+      <if test="serverState != null" >
+        #{serverState,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null" >
+        #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hjrz.user.entity.ServicerExample" resultType="java.lang.Integer" >
+    select count(*) from servicer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hjrz.user.entity.Servicer" >
+    update servicer
+    <set >
+      <if test="serverName != null" >
+        serverName = #{serverName,jdbcType=VARCHAR},
+      </if>
+      <if test="serverType != null" >
+        serverType = #{serverType,jdbcType=INTEGER},
+      </if>
+      <if test="serverState != null" >
+        serverState = #{serverState,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null" >
+        create_time = #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where serverCode = #{serverCode,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hjrz.user.entity.Servicer" >
+    update servicer
+    set serverName = #{serverName,jdbcType=VARCHAR},
+      serverType = #{serverType,jdbcType=INTEGER},
+      serverState = #{serverState,jdbcType=VARCHAR},
+      create_time = #{create_time,jdbcType=TIMESTAMP}
+    where serverCode = #{serverCode,jdbcType=INTEGER}
+  </update>
+</mapper>

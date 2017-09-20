@@ -22,6 +22,11 @@ public class DynamicService {
     @Autowired
     private DynamicMapper dynamicMapper;
     
+    /**
+     * @Description (获取数据/显示全部)
+     * @author RudolphLiu
+     * @Date 2017年7月7日 上午10:04:25
+     */
     public List<Dynamic> findBycontion(DynamicQuery dynamicQuery){
       if(dynamicQuery.getDyTitle()==""){
         dynamicQuery.setDyTitle(null);
@@ -29,6 +34,7 @@ public class DynamicService {
       if(dynamicQuery.getCreate_admin()==""){
         dynamicQuery.setCreate_admin(null);
       }
-      return null;
+      List<Dynamic> dynamics = dynamicMapper.selectByCondition(dynamicQuery);
+      return dynamics;
     }
 }

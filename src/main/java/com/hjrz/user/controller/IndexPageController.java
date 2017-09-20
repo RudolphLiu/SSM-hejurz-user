@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version 1.0.0
  */
 @Controller
-@RequestMapping(value="/home")
+@RequestMapping(value="/common/home")
 public class IndexPageController {
       
       /**

@@ -6,7 +6,9 @@
 <title>核聚瑞增</title>
 <%@include file="../common/share_static.jsp" %>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/main.css" />
+<link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/carousel.css" />
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/signinfo.css"/>
+<script type="text/javascript" src="<%=contextPath %>/js/main.js" ></script>
 </head>
 <body data-spy="scroll" data-target="#navbar">
 <!-- 导航栏begin -->
@@ -15,7 +17,7 @@
     <div id="navbar" class="navbar navbar-default">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" href="index.html"><img src="/images/hjrzlogo.png" style="width: 190px; height: 47px;"></a> </div>
+        <a class="navbar-brand" href="index.html"><img src="<%=contextPath %>/images/hjrzlogo.png" style="width: 190px; height: 47px;"></a> </div>
 	      <div class="collapse navbar-collapse">
 			        <ul class="nav navbar-nav">
 			          <li class="active"> <a href="#myCarousel">首页</a> </li>
@@ -138,7 +140,6 @@
         </div><!--/.container-->
     </section><!--/#services-->
  <!-- 服务简介end -->
- 
  <!-- 硬件推广begin -->
  <section id="portfolio">
   <div class="container">

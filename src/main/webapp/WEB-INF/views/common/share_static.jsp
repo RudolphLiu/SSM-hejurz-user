@@ -8,9 +8,9 @@
 <!-- 引入CSS文件 -->
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/bootstrap-buttons.css" />
-<link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/carousel.css" />
-
+<link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/font-awesome.min.css"/>
 <!-- 引入JS文件 -->
 <script type="text/javascript" src="<%=contextPath %>/js/jquery-3.1.1.min.js" ></script>
 <script type="text/javascript" src="<%=contextPath %>/js/bootstrap.min.js" ></script>
-<script type="text/javascript" src="<%=contextPath %>/js/main.js" ></script>
+<script type="text/javascript" src="<%=contextPath %>/js/jquery.scrolltopcontrol/scrolltopcontrol.js"></script>
+<script type="text/javascript" src="<%=contextPath %>/js/default.js"></script>
