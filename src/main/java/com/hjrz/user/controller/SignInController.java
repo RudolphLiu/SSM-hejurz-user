@@ -4,11 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hjrz.user.constants.CallStatusEnum;
@@ -21,7 +18,6 @@ import com.hjrz.user.exception.SYSException;
 import com.hjrz.user.exception.SignException;
 import com.hjrz.user.form.SignUserForm;
 import com.hjrz.user.service.SignInService;
-import com.hjrz.user.service.UserBasicService;
 
 /**
  * @ClassName SignInController

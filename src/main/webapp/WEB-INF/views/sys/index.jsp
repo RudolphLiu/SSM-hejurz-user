@@ -22,9 +22,9 @@
 			        <ul class="nav navbar-nav">
 			          <li class="active"> <a href="#myCarousel">首页</a> </li>
 			          <li> <a href="#services">服务简介</a> </li>
-			          <li> <a href="#portfolio">硬件推广</a> </li>
-			          <li> <a href="#pricing">软件定制</a> </li>
-			          <li> <a href="#about-us">采购专栏</a> </li>
+			          <li> <a href="#portfolio">硬件产品</a> </li>
+			          <li> <a href="#pricing">软件产品</a> </li>
+			          <li> <a href="#about-us">解决方案</a> </li>
 			          <li> <a href="#contact">联系我们</a> </li>
 			        </ul>
 	        </div>
@@ -150,7 +150,7 @@
       </div>
       <!--/.center-->
       <!--/#portfolio-filter-->
-      <ul class="portfolio-items col-4">
+      <ul class="portfolio-items col-3">
         <li class="portfolio-item">
           <div class="item-inner">
           	<h4>服务器</h4>
@@ -173,14 +173,15 @@
         <!--/.portfolio-item-->
         <li class="portfolio-item">
           <div class="item-inner">
-          	<h4>电脑组件</h4>
-            <a href="" class="button button-uppercase button-primary">商用台式机</a>
-            <a href="" class="button button-uppercase button-primary">商用笔记本</a>
-            <a href="" class="button button-uppercase button-primary">商用显示器</a>
+          	<h4>电脑相关</h4>
+            <a href="" class="button button-uppercase button-primary">整机</a>
+            <a href="" class="button button-uppercase button-primary">笔记本</a>
+            <a href="" class="button button-uppercase button-primary">显示器</a>
+            <a href="" class="button button-uppercase button-primary">显卡</a>
           </div>
         </li>
         <!--/.portfolio-item-->
-        <li class="portfolio-item">
+       <!-- <li class="portfolio-item">
           <div class="item-inner">
           	<h4>显示器</h4>
             <a href="" class="button button-uppercase button-primary">uppercase</a>
@@ -189,7 +190,7 @@
             <a href="" class="button button-uppercase button-primary">uppercase</a>
           </div>
         </li>
-        <!--/.portfolio-item-->
+        /.portfolio-item-->
       </ul>
     </div>
     <!--/.box--> 
@@ -204,17 +205,13 @@
     <div class="box">
       <div class="center">
         <h2>软件定制</h2>
-        <p class="lead">我们将以个性化的创意策划、成熟的网站建设技术、
-        	杰出的多媒体网站设计能力、强大的程序开发实力、
-        	丰富的网站维护经验以及全方位的网络营销策略，
-        	力求为企业提供真正专业、全面的网站建设服务。</p>
       </div>
       <!--/.center-->
-      <div class="big-gap"></div>
+     <!--  <div class="big-gap"></div> -->
       <div id="pricing-table" class="row">
         <div class="col-sm-4">
           <ul class="plan">
-            <li class="plan-name">ERP系统开发</li>
+            <li class="plan-name">智慧教育</li>
             <li><img src="<%=contextPath %>/images/soft_1101.jpg"></li>
        			<li>
 						量身定制企业资源计划管理系统,提高企业生产力和竞争力,满足业务需要和市场要求。</li>
@@ -226,7 +223,7 @@
         <!--/.col-sm-4-->
         <div class="col-sm-4">
           <ul class="plan">
-            <li class="plan-name">application开发</li>
+            <li class="plan-name">智慧城市</li>
             <li><img src="<%=contextPath %>/images/soft_1102.jpg"></li>
             <li>精通各平台应用微信公众号开发，APP软件定制开发.有丰富的实战经验,品质保证。</li>
             <li class="plan-action"><span class="button-wrap">
@@ -237,7 +234,7 @@
         <!--/.col-sm-4-->
         <div class="col-sm-4">
           <ul class="plan">
-            <li class="plan-name">OA系统开发</li>
+            <li class="plan-name">系统开发</li>
             <li><img src="<%=contextPath %>/images/soft_1103.jpg"></li>
             <li>专业定制开发企业客户关系管理软件,应用快速开发平台帮助企业提高工作效率。</li>
             <li class="plan-action"> <span class="button-wrap">
@@ -257,58 +254,89 @@
   <div class="container">
     <div class="box">
       <div class="center">
-        <h2>采购专栏</h2>
-        <p class="lead">根据您的需求，选择适合的服务，我们将为您提供....</p>
+        <h2>综合集成解决方案</h2>
+        <p class="lead"></p>
       </div>
-      <div class="gap"></div>
-      <div id="team-scroller" class="carousel scale">
+     <div id="team-scroller" class="carousel scale">
         <div class="carousel-inner">
-          <div class="item active">
-            <div class="row">
-              <!--<div class="col-sm-4">
-                <div class="member">
-                  <p><img class="img-responsive img-thumbnail img-circle" src="images/team1.jpg" alt=""></p>
-                  <h3>Agnes Smith<small class="designation">CEO &amp; Founder</small></h3>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="member">
-                  <p><img class="img-responsive img-thumbnail img-circle" src="images/team2.jpg" alt=""></p>
-                  <h3>Donald Ford<small class="designation">Senior Vice President</small></h3>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="member">
-                  <p><img class="img-responsive img-thumbnail img-circle" src="images/team3.jpg" alt=""></p>
-                  <h3>Karen Richardson<small class="designation">Assitant Vice President</small></h3>
-                </div>
-              </div>-->
-            </div>
-          </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="member">
-                  <p><img class="img-responsive img-thumbnail img-circle"></p>
-                  <h3>David Robbins<small class="designation">Co-Founder</small></h3>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="member">
-                  <p><img class="img-responsive img-thumbnail img-circle"></p>
-                  <h3>Philip Mejia<small class="designation">Marketing Manager</small></h3>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="member">
-                  <p><img class="img-responsive img-thumbnail img-circle" ></p>
-                  <h3>Charles Erickson<small class="designation">Support Manager</small></h3>
-                </div>
-              </div>
-            </div>
-          </div>
+         	<!--context start-->
+         	<div class="row">
+         		
+			  <div class="col-sm-6 col-md-3">
+			    <div class="thumbnail">
+			      <img src="<%=basePath %>/images/index/shenduxuexi.jpg" style="width:250px;height:150px">
+				      <div class="caption" style="text-align: center;">
+				      <h4><a href="#">GPU服务器-应用于深度</a></h4>
+				        <p>深度学习--GPU服务器方案
+				        CAFFE，Tesorflow软件</p>
+				      </div>
+			    </div>
+			  </div>
+			  
+			  <div class="col-sm-6 col-md-3">
+			    <div class="thumbnail">
+			      <img src="<%=basePath %>/images/index/Abaqus-1.jpg" style="width:250px;height:150px">
+			       <div class="caption" style="text-align: center;">
+			         <h4><a href="#">有限元分析解决方案</a></h4>
+				        <p>Abaqus数值模 拟计算Patran/Nastran软件</p>
+			      </div>
+			    </div>
+			  </div>
+			  
+			  <div class="col-sm-6 col-md-3">
+			    <div class="thumbnail">
+			      <img src="<%=basePath %>/images/index/Landmark-1.jpg" style="width:250px;height:150px">
+			      <div class="caption" style="text-align: center;">
+			       <h4><a href="#">地震数值模拟计算</a></h4>
+				        <p>FELAC地震数值模拟Landmark软件</p>
+			      </div>
+			    </div>
+			  </div>
+			  
+			  <div class="col-sm-6 col-md-3">
+			    <div class="thumbnail">
+			      <img src="<%=basePath %>/images/index/yixueyingxiang.jpg" style="width:250px;height:150px">
+			     <div class="caption" style="text-align: center;">
+			       <h4><a href="#">有限元分析解决方案</a></h4>
+				        <p>Abaqus数值模 拟计算Patran/Nastran软件</p>
+			      </div>
+			    </div>
+			  </div>
+			  
+			  <div class="col-sm-6 col-md-3">
+			    <div class="thumbnail">
+			      <img src="<%=basePath %>/images/index/liangzihuaxue.jpg" style="width:250px;height:150px">
+			     <div class="caption" style="text-align: center;">
+			        <h4><a href="#">量子化学模拟计算</a></h4>
+				        <p>Gaussian分子模拟计算ADF软计算</p>
+			      </div>
+			    </div>
+			  </div>
+			  
+			  <div class="col-sm-6 col-md-3">
+			    <div class="thumbnail">
+			      <img src="<%=basePath %>/images/index/VASP-1.jpg" style="width:250px;height:150px">
+			     <div class="caption" style="text-align: center;">
+			        <h4><a href="#">材料物理计算</a></h4>
+				        <p>VASP数值模拟计算MS，GAUSSIAN软件</p>
+			      </div>
+			    </div>
+			  </div>
+			  
+			  <div class="col-sm-6 col-md-3">
+			    <div class="thumbnail">
+			      <img src="<%=basePath %>/images/index/fluent1.jpg" style="width:250px;height:150px">
+			      <div class="caption" style="text-align: center;">
+			        <h4><a href="#">智慧教育</a></h4>
+				        <p></p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+         	<!--context end-->
         </div>
-        <a class="left-arrow" href="#team-scroller" data-slide="prev"> <i class="icon-angle-left icon-4x"></i> </a> <a class="right-arrow" href="#team-scroller" data-slide="next"> <i class="icon-angle-right icon-4x"></i> </a> </div>
+      </div>
       <!--/.carousel--> 
     </div>
     <!--/.box--> 
@@ -388,6 +416,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>
