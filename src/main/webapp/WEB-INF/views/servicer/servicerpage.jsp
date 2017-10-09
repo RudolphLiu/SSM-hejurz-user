@@ -39,7 +39,6 @@
                     </ul>
                   </div>
                 </div><span>|</span>
-                <div class="social-wrap"><a href="" title="Google +" class="cws_social_link"><i class="share-icon fa fa-google-plus"></i></a><a href="" title="Twitter" class="cws_social_link"><i class="share-icon fa fa-twitter"></i></a><a href="" title="Facebook" class="cws_social_link"><i class="share-icon fa fa-facebook"></i></a><a href="" title="Dribbble" class="cws_social_link"><i class="share-icon fa fa-dribbble"></i></a></div>
               </div>
               <!-- ! lang select wrapper-->
             </div>
@@ -90,7 +89,7 @@
       <nav class="main-nav js-stick">
         <div class="full-wrapper relative clearfix container">
           <!-- Logo ( * your text or image into link tag *)-->
-          <div class="nav-logo-wrap local-scroll"><a href="index.html" class="logo"><img src="/images/hjrzlogo.png"  style="width: 190px; height: 47px;" data-at2x="/images/hjrzlogo.png" alt><img src="/images/hjrzlogo.png" style="width: 190px; height: 47px;" alt class="sticky-logo"></a></div>
+          <div class="nav-logo-wrap local-scroll"><a href="<%=basePath %>/common/home/index.do" class="logo"><img src="/images/hjrzlogo.png"  style="width: 190px; height: 47px;" data-at2x="/images/hjrzlogo.png" alt><img src="/images/hjrzlogo.png" style="width: 190px; height: 47px;" alt class="sticky-logo"></a></div>
           <!-- Main Menu-->
           <div class="inner-nav desktop-nav switch-menu">
             <ul class="clearlist">

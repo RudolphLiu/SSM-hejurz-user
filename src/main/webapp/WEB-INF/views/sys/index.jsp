@@ -154,10 +154,10 @@
         <li class="portfolio-item">
           <div class="item-inner">
           	<h4>服务器</h4>
-            <a href="" class="button button-small-caps button-primary">机架式服务器</a>
-            <a href="" class="button button-small-caps button-primary">直立式服务器</a>
-            <a href="" class="button button-small-caps button-primary">存储式服务器</a>
-            <a href="" class="button button-small-caps button-primary">刀片式服务器</a>
+            <a href="<%=basePath %>/server/serverlist.do" class="button button-small-caps button-primary">机架式服务器</a>
+            <a href="<%=basePath %>/server/serverlist.do" class="button button-small-caps button-primary">直立式服务器</a>
+            <a href="<%=basePath %>/server/serverlist.do" class="button button-small-caps button-primary">存储式服务器</a>
+            <a href="<%=basePath %>/server/serverlist.do" class="button button-small-caps button-primary">刀片式服务器</a>
           </div>
         </li>
         <!--/.portfolio-item-->
