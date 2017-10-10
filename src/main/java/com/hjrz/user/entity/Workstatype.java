@@ -2,7 +2,7 @@ package com.hjrz.user.entity;
 
 import java.util.Date;
 
-public class workstatype {
+public class Workstatype {
     private Integer wks_typeCode;
 
     private String wks_typeName;
@@ -64,7 +64,7 @@ public class workstatype {
         if (getClass() != that.getClass()) {
             return false;
         }
-        workstatype other = (workstatype) that;
+        Workstatype other = (Workstatype) that;
         return (this.getWks_typeCode() == null ? other.getWks_typeCode() == null : this.getWks_typeCode().equals(other.getWks_typeCode()))
             && (this.getWks_typeName() == null ? other.getWks_typeName() == null : this.getWks_typeName().equals(other.getWks_typeName()))
             && (this.getCreate_time() == null ? other.getCreate_time() == null : this.getCreate_time().equals(other.getCreate_time()))

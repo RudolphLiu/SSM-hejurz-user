@@ -13,7 +13,35 @@ public class Workstation {
 
     private Date create_time;
 
-    public Long getWorksCode() {
+    private Workstatype worktype;
+    
+    private Workstation_info workstation_info;
+    
+    public Workstatype getWorkstatype() {
+		return worktype;
+	}
+
+	public void setWorkstatype(Workstatype worktype) {
+		this.worktype = worktype;
+	}
+	
+	public Workstatype getWorktype() {
+		return worktype;
+	}
+
+	public void setWorktype(Workstatype worktype) {
+		this.worktype = worktype;
+	}
+
+	public Workstation_info getWorkstation_info() {
+		return workstation_info;
+	}
+
+	public void setWorkstation_info(Workstation_info workstation_info) {
+		this.workstation_info = workstation_info;
+	}
+
+	public Long getWorksCode() {
         return worksCode;
     }
 

@@ -1,11 +1,10 @@
 package com.hjrz.user.dao;
 
+import java.util.List;
+
 import com.hjrz.user.entity.Workstation;
-import com.hjrz.user.entity.WorkstationExample;
 
 public interface WorkstationMapper {
-    int countByExample(WorkstationExample example);
-
     int deleteByPrimaryKey(Long worksCode);
 
     int insert(Workstation record);
@@ -17,4 +16,6 @@ public interface WorkstationMapper {
     int updateByPrimaryKeySelective(Workstation record);
 
     int updateByPrimaryKey(Workstation record);
+    
+    List<Workstation> selectworkstation();
 }
