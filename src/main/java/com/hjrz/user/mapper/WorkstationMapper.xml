@@ -29,7 +29,7 @@
     worksCode, worksName, worksType, worksState, create_time
   </sql>
   
-   <select id="selectworkstation" resultMap="BaseResultMap" >  
+   <select id="selectworkstation" resultMap="BaseResultMap">  
 	   	   SELECT
 			w.worksCode,
 			w.worksName,
