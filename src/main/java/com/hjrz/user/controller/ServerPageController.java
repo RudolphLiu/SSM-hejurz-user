@@ -26,7 +26,7 @@ public class ServerPageController {
 	 * @author RodulphLiu
 	 * @Date 2017年8月21日
 	 */
-	@RequestMapping(value="/serverlist.do")
+	@RequestMapping(value="/serverlist.hjrz")
 	public ModelAndView Getserver(ServicerQuery servicerQuery){
 		ModelAndView modelAndView = new ModelAndView();
 		ExchangeData<Object> exchangeData = new ExchangeData<Object>();

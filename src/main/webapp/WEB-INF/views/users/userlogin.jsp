@@ -15,7 +15,7 @@
 	<div class="login_m">
 	<div class="login_boder">
 	<div class="login_padding" id="login_model">
-	 				<form id="contact" action="<%=basePath %>login/login.do" method="post">
+	 				<form id="contact" action="<%=basePath %>login/login.hjrz" method="post">
 						<div class="form-group">
 							<label for="exampleInputEmail1">用户名：</label>
 							<input type="text" id="username" class="form-control" name="user_login_phone" required autofocus placeholder="用户名">
@@ -30,7 +30,7 @@
 						    </label>
 						</div>
 						 <button type="submit" class="button button-primary button-pill button-small">登录</button>
-						<a href="<%=basePath %>signin/toSign.do" style="margin-left:120px">立即注册>>></a>
+						<a href="<%=basePath %>signin/toSign.hjrz" style="margin-left:120px">立即注册>>></a>
 					</form>
 	  </div>
 	</div>

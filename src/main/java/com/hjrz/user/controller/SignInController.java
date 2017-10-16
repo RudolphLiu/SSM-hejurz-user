@@ -38,7 +38,7 @@ public class SignInController {
        * @author RudolphLiu
        * @Date 2017年5月30日 下午9:47:20
        */
-      @RequestMapping(value="/toSign.do")
+      @RequestMapping(value="/toSign.hjrz")
       public ModelAndView toSignIn(){
           ModelAndView modelAndView = new ModelAndView();
           try {
@@ -56,7 +56,7 @@ public class SignInController {
        * @author RudolphLiu
        * @Date 2017年5月30日 下午10:30:30
        */
-      @RequestMapping(value="/sign.do",method=RequestMethod.POST)
+      @RequestMapping(value="/sign.hjrz",method=RequestMethod.POST)
       public ModelAndView sign(SignUserForm signUserForm,HttpServletRequest request){
            ModelAndView modelAndView = new ModelAndView();
            ExchangeData<Object> exchangeData = new ExchangeData<Object>();

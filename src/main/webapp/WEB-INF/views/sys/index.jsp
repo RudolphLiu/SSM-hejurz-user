@@ -17,7 +17,7 @@
     <div id="navbar" class="navbar navbar-default">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" href="index.html"><img src="<%=contextPath %>/images/hjrzlogo.png" style="width: 190px; height: 47px;"></a> </div>
+        <a class="navbar-brand" href="/common/home/index.hjrz"><img src="<%=contextPath %>/images/hjrzlogo.png" style="width: 190px; height: 47px;"></a> </div>
 	      <div class="collapse navbar-collapse">
 			        <ul class="nav navbar-nav">
 			          <li class="active"> <a href="#myCarousel">首页</a> </li>
@@ -33,7 +33,7 @@
         	<c:when test="${empty user_basic_info.user_login_phone}">
         	<div class="userbtn">
         		<div class="dropdown">
-					<a href="<%=basePath %>login/touserlogin.do" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
+					<a href="<%=basePath %>login/touserlogin.hjrz" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
 				</div>
 			</div>
         	</c:when>
@@ -82,16 +82,24 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+         <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-			<img src="<%=contextPath %>/images/explogo1.jpg" alt="First slide">
+			<img src="<%=contextPath %>/images/banner11.jpg" alt="First slide">
 		</div>
 		<div class="item">
-			<img src="<%=contextPath %>/images/explogo2.jpg" alt="Second slide">
+			<img src="<%=contextPath %>/images/banner12.jpg" alt="Second slide">
 		</div>
 		<div class="item">
-			<img src="<%=contextPath %>/images/explogo4.jpg" alt="Third slide">
+			<img src="<%=contextPath %>/images/banner13.jpg" alt="Third slide">
+		</div>
+		<div class="item">
+			<img src="<%=contextPath %>/images/banner14.jpg" alt="Second slide">
+		</div>
+		<div class="item">
+			<img src="<%=contextPath %>/images/banner15.jpg" alt="Second slide">
 		</div>
 	</div>
 	<!-- 轮播（Carousel）导航 -->
@@ -154,10 +162,10 @@
         <li class="portfolio-item">
           <div class="item-inner">
           	<h4>服务器</h4>
-            <a href="<%=basePath %>/server/serverlist.do" class="button button-small-caps button-primary">机架式服务器</a>
-            <a href="<%=basePath %>/server/serverlist.do" class="button button-small-caps button-primary">直立式服务器</a>
-            <a href="<%=basePath %>/server/serverlist.do" class="button button-small-caps button-primary">存储式服务器</a>
-            <a href="<%=basePath %>/server/serverlist.do" class="button button-small-caps button-primary">刀片式服务器</a>
+            <a href="<%=basePath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">机架式服务器</a>
+            <a href="<%=basePath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">直立式服务器</a>
+            <a href="<%=basePath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">存储式服务器</a>
+            <a href="<%=basePath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">刀片式服务器</a>
           </div>
         </li>
         <!--/.portfolio-item-->
@@ -354,7 +362,7 @@
           <h1>通知我们</h1>
           <p>请将您的需求、建议发送给我们，留下您的电子邮箱，在我们收到之后会给您回复</p>
           <div class="status alert alert-success" style="display: none"></div>
-          <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="<%=basePath %>userContact/insertFeedBack.do" role="form">
+          <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="<%=basePath %>userContact/insertFeedBack.hjrz" role="form">
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">

@@ -31,7 +31,7 @@ public class EmailContactController {
        * @Date 2017年6月8日 下午5:24:25
        */
       @ResponseBody
-      @RequestMapping(value="/insertFeedBack.do",method=RequestMethod.POST)
+      @RequestMapping(value="/insertFeedBack.hjrz",method=RequestMethod.POST)
       public ModelAndView insertUserContact(UserFeedBackForm userFeedBackForm)
       {
           ModelAndView modelAndView = new ModelAndView();

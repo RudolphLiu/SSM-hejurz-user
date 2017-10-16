@@ -44,39 +44,39 @@
             </div>
             <div class="col-sm-6 text-right">
               <div class="top-right-wrap">
-                <div class="top-login"><i class="flaticon-people-2"></i>Login</div><span>|</span>
-                <div class="top-shop"><i class="flaticon-commerce"></i>足迹
+                <div class="top-login"><i class="flaticon-people-2"></i>登录</div><span>|</span>
+                <!-- <div class="top-shop"><i class="flaticon-commerce"></i>足迹
                   <aside class="widget-top-sellers #cart-menu">
                     <p>There Are <span>2 items</span> In Your Bag</p>
-                    <!-- item recent post-->
+                    item recent post
                     <div class="item-top-sellers clearfix"><img src="pic/shop/70x80/1.jpg" data-at2x="pic/shop/70x80/1@2x.jpg" alt>
                       <h3 class="title"><a href="single.html">Integer ante arcu serius</a> <a href="#" class="#close"><i class="flaticon-cross"></i></a></h3>
                       <div class="price">$40.<span class="mini-price">99</span> <span class="old-price">$30.<span class="mini-price">99</span></span></div>
                       <div class="star-rating full"></div>
                       <div class="cws_divider mt-10 mb-10"> </div>
                     </div>
-                    <!-- ! item recent post-->
-                    <!-- item recent post-->
+                    ! item recent post
+                    item recent post
                     <div class="item-top-sellers clearfix"><img src="pic/shop/70x80/2.jpg" data-at2x="pic/shop/70x80/2@2x.jpg" alt>
                       <h3 class="title"><a href="single.html">Aenean tellus metus</a> <a href="#" class="#close"><i class="flaticon-cross"></i></a></h3>
                       <div class="price">$15.<span class="mini-price">99</span></div>
                       <div class="star-rating full"></div>
                       <div class="cws_divider mt-10 mb-10"></div>
                     </div>
-                    <!-- ! item recent post-->
+                    ! item recent post
                     <div class="total clearfix">
                       <div class="sub-total">Subtotal: <span>$57</span></div><a href="#" class="clear">Clear All Data <i class="flaticon-recycle"></i></a>
                     </div>
                     <div class="cart-buttons"><a href="cart.html" class="cws-button alt mini">View Cart</a><a href="checkout.html" class="cws-button mini">Checkout</a></div>
                   </aside>
-                </div><span>|</span>
-                <div class="top-search"><i class="flaticon-interface"></i>Search</div>
+                </div> <span>|</span>-->
+                <div class="top-search"><i class="flaticon-interface"></i>搜索</div>
               </div>
             </div>
             <div class="search_menu_cont">
               <form role="search" method="get" class="form">
                 <div class="search-wrap">
-                  <input type="text" placeholder="Search . . ." class="form-control search-field">
+                  <input type="text" placeholder="输入需要查找的内容. . ." class="form-control search-field">
                 </div>
               </form>
               <div class="search_back_button"><i class="fa fa-close"></i></div>
@@ -89,12 +89,12 @@
       <nav class="main-nav js-stick">
         <div class="full-wrapper relative clearfix container">
           <!-- Logo ( * your text or image into link tag *)-->
-          <div class="nav-logo-wrap local-scroll"><a href="<%=basePath %>/common/home/index.do" class="logo"><img src="/images/hjrzlogo.png"  style="width: 190px; height: 47px;" data-at2x="/images/hjrzlogo.png" alt><img src="/images/hjrzlogo.png" style="width: 190px; height: 47px;" alt class="sticky-logo"></a></div>
+          <div class="nav-logo-wrap local-scroll"><a href="<%=basePath %>/common/home/index.hjrz" class="logo"><img src="/images/hjrzlogo.png"  style="width: 190px; height: 47px;" data-at2x="/images/hjrzlogo.png" alt><img src="/images/hjrzlogo.png" style="width: 190px; height: 47px;" alt class="sticky-logo"></a></div>
           <!-- Main Menu-->
           <div class="inner-nav desktop-nav switch-menu">
             <ul class="clearlist">
               <!-- Item With Sub-->
-				<li><a href="<%=contextPath %>/common/home/index.do">首页</a></li>
+				<li><a href="<%=contextPath %>/common/home/index.hjrz">首页</a></li>
 				<li><a href="about.html">服务器</a></li>
 				<li><a href="single.html">工作站</a></li>
 				<li><a href="grid.html">硬件产品</a></li>
@@ -103,17 +103,16 @@
             </ul>
             <div class="menu-contacts">
               <div class="menu-contacts-item"><i class="glyphicon glyphicon-tasks cws-icon"></i>
-                <p class="mb-0">优质服务器</p>
-                <p class="mb-0">共-134-台</p>
-                
+                <p class="mb-0">服务器</p>
+                <p class="mb-0">共-0-台</p>
               </div>
               <div class="menu-contacts-item"><i class="glyphicon glyphicon-earphone cws-icon"></i>
                 <p class="mb-0">客户服务电话</p>
                 <p class="mb-0">13177536625</p>
               </div>
               <div class="menu-contacts-item"><i class="glyphicon glyphicon-user cws-icon"></i>
-                <p class="mb-0">客户：刘子丙</p>
-                <p class="mb-0">Sunday: Closed</p>
+                <p class="mb-0">未登录</p>
+                <p class="mb-0">xxx</p>
               </div>
             </div><a href="#" class="menu-bar"><span class="ham"></span></a>
           </div>

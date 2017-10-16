@@ -89,12 +89,12 @@
       <nav class="main-nav js-stick">
         <div class="full-wrapper relative clearfix container">
           <!-- Logo ( * your text or image into link tag *)-->
-          <div class="nav-logo-wrap local-scroll"><a href="<%=basePath %>/common/home/index.do" class="logo"><img src="/images/hjrzlogo.png"  style="width: 190px; height: 47px;" data-at2x="/images/hjrzlogo.png" alt><img src="/images/hjrzlogo.png" style="width: 190px; height: 47px;" alt class="sticky-logo"></a></div>
+          <div class="nav-logo-wrap local-scroll"><a href="<%=basePath %>/common/home/index.hjrz" class="logo"><img src="/images/hjrzlogo.png"  style="width: 190px; height: 47px;" data-at2x="/images/hjrzlogo.png" alt><img src="/images/hjrzlogo.png" style="width: 190px; height: 47px;" alt class="sticky-logo"></a></div>
           <!-- Main Menu-->
           <div class="inner-nav desktop-nav switch-menu">
             <ul class="clearlist">
               <!-- Item With Sub-->
-				<li><a href="<%=contextPath %>/common/home/index.do">首页</a></li>
+				<li><a href="<%=contextPath %>/common/home/index.hjrz">首页</a></li>
 				<li><a href="about.html">服务器</a></li>
 				<li><a href="single.html">工作站</a></li>
 				<li><a href="grid.html">硬件产品</a></li>

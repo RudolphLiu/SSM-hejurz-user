@@ -34,7 +34,7 @@ public class LoginController {
        * @author RudolphLiu
        * @Date 2017年5月31日 上午10:59:55
        */
-      @RequestMapping(value="/touserlogin.do")
+      @RequestMapping(value="/touserlogin.hjrz")
       public String touserlogin(HttpServletRequest request,HttpServletResponse response){
           return "users/userlogin";
       }
@@ -44,7 +44,7 @@ public class LoginController {
        * @author RudolphLiu
        * @Date 2017年5月31日 上午10:29:17
        */
-      @RequestMapping(value="/login.do",method=RequestMethod.POST)
+      @RequestMapping(value="/login.hjrz",method=RequestMethod.POST)
       public ModelAndView login(LoginUserForm loginUserForm,HttpServletRequest request,HttpServletResponse response)
       {
         ModelAndView modelAndView = new ModelAndView();
@@ -73,7 +73,7 @@ public class LoginController {
         } catch (Exception e) {
           return ErrorPages.PAGE_500;
         }
-         return "redirect:/home/index.do";
+         return "redirect:/home/index.hjrz";
       }
       
 }

@@ -16,7 +16,7 @@
 						<hr class="hru" />
 					</div>
 					<div class="textform">
-						<form class="form-horizontal" action="<%=basePath %>/signin/sign.do" method="post">
+						<form class="form-horizontal" action="<%=basePath %>/signin/sign.hjrz" method="post">
 							<div class="form-group">
 								<hr/>
 								<label class="col-sm-3 control-label">手机号码：</label>
@@ -70,7 +70,7 @@
 							<div class="form-group">
 							    <div class="col-sm-offset-4 col-sm-10">
 							     <!--  <a href="http://www.bootcss.com/" class="button button-highlight button-large">注册</a> -->
-							    	<a href="<%=basePath %>home/index.do">返回主页</a>
+							    	<a href="<%=basePath %>home/index.hjrz">返回主页</a>
 							    </div>
 							</div>
 							<input type="submit" value="ddd"/>

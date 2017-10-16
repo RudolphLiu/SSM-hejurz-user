@@ -18,7 +18,7 @@ public class WorkStationController {
 	@Autowired
 	private WorkStationService workStationService;
 	
-	@RequestMapping(value="/workstation.do")
+	@RequestMapping(value="/workstation.hjrz")
 	public ModelAndView getWorkstationList()
 	{
 		ModelAndView modelAndView = new ModelAndView();

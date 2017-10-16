@@ -22,7 +22,7 @@ public class IndexPageController {
        * @author RudolphLiu
        * @Date 2017年5月31日 上午11:40:30
        */
-      @RequestMapping(value="/index.do")
+      @RequestMapping(value="/index.hjrz")
       public String index(HttpServletRequest request,HttpServletResponse response)
       {
           return "sys/index";
