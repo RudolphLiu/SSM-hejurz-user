@@ -220,33 +220,33 @@
         <div class="col-sm-4">
           <ul class="plan">
             <li class="plan-name">智慧教育</li>
-            <li><img src="<%=contextPath %>/images/soft_1101.jpg"></li>
+            <li><img src="http://www.hejurz.com/Admin/umeditor/asp/UploadFile/images/SERVER/825SR-S8.jpg" style="width:300px;height:250px;"></li>
        			<li>
-						量身定制企业资源计划管理系统,提高企业生产力和竞争力,满足业务需要和市场要求。</li>
+						利用教育行业特有的数据（视频课程、电子读物、成绩数据），形成独具教育领域特色的教育教学“私有云”智慧平台，把教育内容、教学手段、教学改进数据化，利用“教育私有云”把教育教学引入大数据时代。</li>
             <li class="plan-action"><span class="button-wrap">
-						    <a href="" class="button button-pill button-raised button-primary">查看</a>
+						    <a href="<%=basePath %>/ad/adview.hjrz?id=8" class="button button-pill button-raised button-primary">查看</a>
 						  </span></li>
           </ul>
         </div>
         <!--/.col-sm-4-->
         <div class="col-sm-4">
           <ul class="plan">
-            <li class="plan-name">智慧城市</li>
-            <li><img src="<%=contextPath %>/images/soft_1102.jpg"></li>
-            <li>精通各平台应用微信公众号开发，APP软件定制开发.有丰富的实战经验,品质保证。</li>
+            <li class="plan-name">云端智能处理地下管网系统</li>
+            <li><img src="http://www.gisroad.com/images/3dpline/image001.jpg" style="width:300px;height:250px;"></li>
+            <li>综合管廊可视化管理平台是北京核聚瑞增系统科技有限公司利用HGIS平台，整合可视化视频监控、电子智能感应元件、电子智能控制元件、数据智能分析、现实工作仿真模拟等模块，推出的一套专业的、权威的针对地下综合管廊管理的解决方案。</li>
             <li class="plan-action"><span class="button-wrap">
-						    <a href="" class="button button-pill button-raised button-primary">查看</a>
+						    <a href="<%=basePath %>/ad/adview.hjrz?id=9" class="button button-pill button-raised button-primary">查看</a>
 						  </span></li>
           </ul>
         </div>
         <!--/.col-sm-4-->
         <div class="col-sm-4">
           <ul class="plan">
-            <li class="plan-name">系统开发</li>
-            <li><img src="<%=contextPath %>/images/soft_1103.jpg"></li>
-            <li>专业定制开发企业客户关系管理软件,应用快速开发平台帮助企业提高工作效率。</li>
+            <li class="plan-name">软件定制开发</li>
+            <li><img src="<%=contextPath %>/images/soft_1101.jpg" style="width:300px;height:250px;"></li>
+            <li>核聚瑞增凭借在教育培训行业的经验积累，针对传统教育培训行业所面临的诸多运营和管理问题，能够根据企业的具体需求，从以下方面为教育培训企业提供定制开发服务，借助信息化的力量帮助企业提高运营和管理效率，增强竞争力</li>
             <li class="plan-action"> <span class="button-wrap">
-						    <a href="" class="button button-pill button-raised button-primary">查看</a>
+						    <a href="<%=basePath %>/ad/adview.hjrz?id=10" class="button button-pill button-raised button-primary">查看</a>
 						  </span></li>
           </ul>
         </div>
@@ -274,7 +274,7 @@
 			    <div class="thumbnail">
 			      <img src="<%=basePath %>/images/index/shenduxuexi.jpg" style="width:250px;height:150px">
 				      <div class="caption" style="text-align: center;">
-				      <h4><a href="#">GPU服务器-应用于深度</a></h4>
+				      <h4><a href="<%=basePath %>/ad/adview.hjrz?id=1">GPU服务器-应用于深度</a></h4>
 				        <p>深度学习--GPU服务器方案
 				        CAFFE，Tesorflow软件</p>
 				      </div>
@@ -285,7 +285,7 @@
 			    <div class="thumbnail">
 			      <img src="<%=basePath %>/images/index/Abaqus-1.jpg" style="width:250px;height:150px">
 			       <div class="caption" style="text-align: center;">
-			         <h4><a href="#">有限元分析解决方案</a></h4>
+			         <h4><a href="<%=basePath %>/ad/adview.hjrz?id=2">有限元分析解决方案</a></h4>
 				        <p>Abaqus数值模 拟计算Patran/Nastran软件</p>
 			      </div>
 			    </div>
@@ -295,7 +295,7 @@
 			    <div class="thumbnail">
 			      <img src="<%=basePath %>/images/index/Landmark-1.jpg" style="width:250px;height:150px">
 			      <div class="caption" style="text-align: center;">
-			       <h4><a href="#">地震数值模拟计算</a></h4>
+			       <h4><a href="<%=basePath %>/ad/adview.hjrz?id=3">地震数值模拟计算</a></h4>
 				        <p>FELAC地震数值模拟Landmark软件</p>
 			      </div>
 			    </div>
@@ -305,7 +305,7 @@
 			    <div class="thumbnail">
 			      <img src="<%=basePath %>/images/index/yixueyingxiang.jpg" style="width:250px;height:150px">
 			     <div class="caption" style="text-align: center;">
-			       <h4><a href="#">有限元分析解决方案</a></h4>
+			       <h4><a href="<%=basePath %>/ad/adview.hjrz?id=4">有限元分析解决方案</a></h4>
 				        <p>Abaqus数值模 拟计算Patran/Nastran软件</p>
 			      </div>
 			    </div>
@@ -315,7 +315,7 @@
 			    <div class="thumbnail">
 			      <img src="<%=basePath %>/images/index/liangzihuaxue.jpg" style="width:250px;height:150px">
 			     <div class="caption" style="text-align: center;">
-			        <h4><a href="#">量子化学模拟计算</a></h4>
+			        <h4><a href="<%=basePath %>/ad/adview.hjrz?id=5">量子化学模拟计算</a></h4>
 				        <p>Gaussian分子模拟计算ADF软计算</p>
 			      </div>
 			    </div>
@@ -325,7 +325,7 @@
 			    <div class="thumbnail">
 			      <img src="<%=basePath %>/images/index/VASP-1.jpg" style="width:250px;height:150px">
 			     <div class="caption" style="text-align: center;">
-			        <h4><a href="#">材料物理计算</a></h4>
+			        <h4><a href="<%=basePath %>/ad/adview.hjrz?id=6">材料物理计算</a></h4>
 				        <p>VASP数值模拟计算MS，GAUSSIAN软件</p>
 			      </div>
 			    </div>
@@ -333,10 +333,10 @@
 			  
 			  <div class="col-sm-6 col-md-3">
 			    <div class="thumbnail">
-			      <img src="<%=basePath %>/images/index/fluent1.jpg" style="width:250px;height:150px">
+			      <img src="http://www.hejurz.com/Admin/umeditor/asp/UploadFile/files/%E8%84%B1%E6%9C%BA%E5%8C%85_meitu_3.jpg" style="width:250px;height:150px">
 			      <div class="caption" style="text-align: center;">
-			        <h4><a href="#">智慧教育</a></h4>
-				        <p></p>
+			        <h4><a href="<%=basePath %>/ad/adview.hjrz?id=7">拖机宝</a></h4>
+			        <p>可以轻松解决所有问题。实施变得简单，维护变得容易</p>
 			      </div>
 			    </div>
 			  </div>
