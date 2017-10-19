@@ -2,6 +2,8 @@ package com.hjrz.user.entity;
 
 import java.util.Date;
 
+import com.hjrz.user.constants.HardWareStateEnum;
+
 public class Hardware {
     private Long hardwareCode;
 
@@ -11,15 +13,25 @@ public class Hardware {
 
     private Long hardwareType;
 
-    private String hardwareState;
+    private HardWareStateEnum hardwareState;
 
     private Date create_time;
+    
+    private Brand brand;
 
     private Hardwaretype hardwaretype;
     
     private Hardware_info hardware_info;
     
-    public Hardwaretype getHardwaretype() {
+    public Brand getBrand() {
+		return brand;
+	}
+
+	public void setBrand(Brand brand) {
+		this.brand = brand;
+	}
+
+	public Hardwaretype getHardwaretype() {
 		return hardwaretype;
 	}
 
@@ -66,16 +78,16 @@ public class Hardware {
     public void setHardwareType(Long hardwareType) {
         this.hardwareType = hardwareType;
     }
+    
+    public HardWareStateEnum getHardwareState() {
+		return hardwareState;
+	}
 
-    public String getHardwareState() {
-        return hardwareState;
-    }
+	public void setHardwareState(HardWareStateEnum hardwareState) {
+		this.hardwareState = hardwareState;
+	}
 
-    public void setHardwareState(String hardwareState) {
-        this.hardwareState = hardwareState == null ? null : hardwareState.trim();
-    }
-
-    public Date getCreate_time() {
+	public Date getCreate_time() {
         return create_time;
     }
 

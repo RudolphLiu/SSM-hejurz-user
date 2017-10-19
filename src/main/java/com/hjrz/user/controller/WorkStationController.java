@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hjrz.user.entity.Workstation;
-import com.hjrz.user.form.WorkStationQuery;
 import com.hjrz.user.service.WorkStationService;
 
 @Controller
@@ -32,5 +31,4 @@ public class WorkStationController {
 		}
 		return modelAndView;
 	}
-	
 }

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hjrz.user.dao.BrandMapper">
+
+	<resultMap id="BaseResultMap" type="com.hjrz.user.entity.Brand">
+		<id column="brandCode" property="brandCode" jdbcType="BIGINT" />
+		<result column="brandName" property="brandName" jdbcType="VARCHAR" />
+		<result column="brandImgPath" property="brandImgPath" jdbcType="VARCHAR" />
+		<result column="brandIntroduction" property="brandIntroduction"
+			jdbcType="VARCHAR" />
+		<result column="brandstate" property="brandstate" jdbcType="VARCHAR" />
+		<result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		brandCode, brandName, brandImgPath, brandIntroduction, brandstate, create_time
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from brand
+		where brandCode = #{brandCode,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from brand
+		where brandCode = #{brandCode,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="com.hjrz.user.entity.Brand">
+		<selectKey resultType="java.lang.Long" keyProperty="brandCode"
+			order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into brand (brandName, brandImgPath, brandIntroduction,
+		brandstate, create_time)
+		values (#{brandName,jdbcType=VARCHAR}, #{brandImgPath,jdbcType=VARCHAR},
+		#{brandIntroduction,jdbcType=VARCHAR},
+		#{brandstate,jdbcType=VARCHAR}, #{create_time,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="com.hjrz.user.entity.Brand">
+		<selectKey resultType="java.lang.Long" keyProperty="brandCode"
+			order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into brand
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="brandName != null">
+				brandName,
+			</if>
+			<if test="brandImgPath != null">
+				brandImgPath,
+			</if>
+			<if test="brandIntroduction != null">
+				brandIntroduction,
+			</if>
+			<if test="brandstate != null">
+				brandstate,
+			</if>
+			<if test="create_time != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="brandName != null">
+				#{brandName,jdbcType=VARCHAR},
+			</if>
+			<if test="brandImgPath != null">
+				#{brandImgPath,jdbcType=VARCHAR},
+			</if>
+			<if test="brandIntroduction != null">
+				#{brandIntroduction,jdbcType=VARCHAR},
+			</if>
+			<if test="brandstate != null">
+				#{brandstate,jdbcType=VARCHAR},
+			</if>
+			<if test="create_time != null">
+				#{create_time,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.hjrz.user.entity.Brand">
+		update brand
+		<set>
+			<if test="brandName != null">
+				brandName = #{brandName,jdbcType=VARCHAR},
+			</if>
+			<if test="brandImgPath != null">
+				brandImgPath = #{brandImgPath,jdbcType=VARCHAR},
+			</if>
+			<if test="brandIntroduction != null">
+				brandIntroduction = #{brandIntroduction,jdbcType=VARCHAR},
+			</if>
+			<if test="brandstate != null">
+				brandstate = #{brandstate,jdbcType=VARCHAR},
+			</if>
+			<if test="create_time != null">
+				create_time = #{create_time,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where brandCode = #{brandCode,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.hjrz.user.entity.Brand">
+		update brand
+		set brandName = #{brandName,jdbcType=VARCHAR},
+		brandImgPath = #{brandImgPath,jdbcType=VARCHAR},
+		brandIntroduction = #{brandIntroduction,jdbcType=VARCHAR},
+		brandstate = #{brandstate,jdbcType=VARCHAR},
+		create_time = #{create_time,jdbcType=TIMESTAMP}
+		where brandCode = #{brandCode,jdbcType=BIGINT}
+	</update>
+</mapper>

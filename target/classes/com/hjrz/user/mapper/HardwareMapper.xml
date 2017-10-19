@@ -8,8 +8,21 @@
     <result column="hardwareType" property="hardwareType" jdbcType="BIGINT" />
     <result column="hardwareState" property="hardwareState" jdbcType="VARCHAR" />
     <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
-    <association property="">
-    	
+    <association property="brand" javaType="com.hjrz.user.entity.Brand">
+    	<id column="brandCode" property="brandCode"></id>
+    	<result column="brandName" property="brandName"/>
+    </association>
+    <association property="hardwaretype" javaType="com.hjrz.user.entity.Hardwaretype">
+    	<id column="hardtypeCode" property="hardtypeName"/>
+    	<result column="hardtypeName" property="hardtypeName"/>
+    	<result column="hardtypeImgPath" property="hardtypeImgPath"/>
+    	<result column="hardtypeIntroduction" property="hardtypeIntroduction"/>
+    	<result column="hardtypestate" property="hardtypestate"/>
+    </association>
+    <association property="hardware_info" javaType="com.hjrz.user.entity.Hardware_info">
+    	<id column="hardwareinfoCode" property="hardwareinfoCode"/>
+    	<result column="hardwareImgpath" property="hardwareImgpath"/>
+    	<result column="hardwareinfoDetail" property="hardwareinfoDetail"/>
     </association>
   </resultMap>
   
@@ -22,6 +35,21 @@
     <include refid="Base_Column_List" />
     from hardware
     where hardwareCode = #{hardwareCode,jdbcType=BIGINT}
+  </select>
+  
+  <select id="selectallhardware" resultMap="BaseResultMap">
+			SELECT
+					hw.hardwareName,
+					b.brandName,
+					hwt.hardtypeName,
+					hwi.hardwareImgpath,
+					hwi.hardwareinfoDetail,
+					hw.create_time
+			FROM
+					hardware hw
+			LEFT JOIN hardware_info hwi ON hwi.hardwareinfoCode = hw.hardwareCode
+			LEFT JOIN hardwaretype hwt ON hwt.hardtypeCode = hw.hardwareType
+			LEFT JOIN brand b ON b.brandCode = hw.brandCode
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >

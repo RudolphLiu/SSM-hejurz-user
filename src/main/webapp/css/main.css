@@ -1,6 +1,11 @@
 body {
   background: #e5e5e5;
 }
+#services,#portfolio,#pricing,#about-us
+{
+	padding-top:86px;
+	margin-top:-86px;
+}
 a {
   color: #52b6ec;
   -webkit-transition: 300ms;

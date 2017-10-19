@@ -2,12 +2,12 @@ package com.hjrz.user.entity;
 
 import java.util.Date;
 
-public class Email_contact_me {
-    private Integer linkCode;
+public class Feedback {
+    private Long fbCode;
 
-    private String link_user_name;
+    private String fb_user_name;
 
-    private String link_user_email;
+    private String fbuseremail;
 
     private Date create_time;
 
@@ -15,28 +15,28 @@ public class Email_contact_me {
 
     private String link_message;
 
-    public Integer getLinkCode() {
-        return linkCode;
+    public Long getFbCode() {
+        return fbCode;
     }
 
-    public void setLinkCode(Integer linkCode) {
-        this.linkCode = linkCode;
+    public void setFbCode(Long fbCode) {
+        this.fbCode = fbCode;
     }
 
-    public String getLink_user_name() {
-        return link_user_name;
+    public String getFb_user_name() {
+        return fb_user_name;
     }
 
-    public void setLink_user_name(String link_user_name) {
-        this.link_user_name = link_user_name == null ? null : link_user_name.trim();
+    public void setFb_user_name(String fb_user_name) {
+        this.fb_user_name = fb_user_name == null ? null : fb_user_name.trim();
     }
 
-    public String getLink_user_email() {
-        return link_user_email;
+    public String getFbuseremail() {
+        return fbuseremail;
     }
 
-    public void setLink_user_email(String link_user_email) {
-        this.link_user_email = link_user_email == null ? null : link_user_email.trim();
+    public void setFbuseremail(String fbuseremail) {
+        this.fbuseremail = fbuseremail == null ? null : fbuseremail.trim();
     }
 
     public Date getCreate_time() {
@@ -74,10 +74,10 @@ public class Email_contact_me {
         if (getClass() != that.getClass()) {
             return false;
         }
-        Email_contact_me other = (Email_contact_me) that;
-        return (this.getLinkCode() == null ? other.getLinkCode() == null : this.getLinkCode().equals(other.getLinkCode()))
-            && (this.getLink_user_name() == null ? other.getLink_user_name() == null : this.getLink_user_name().equals(other.getLink_user_name()))
-            && (this.getLink_user_email() == null ? other.getLink_user_email() == null : this.getLink_user_email().equals(other.getLink_user_email()))
+        Feedback other = (Feedback) that;
+        return (this.getFbCode() == null ? other.getFbCode() == null : this.getFbCode().equals(other.getFbCode()))
+            && (this.getFb_user_name() == null ? other.getFb_user_name() == null : this.getFb_user_name().equals(other.getFb_user_name()))
+            && (this.getFbuseremail() == null ? other.getFbuseremail() == null : this.getFbuseremail().equals(other.getFbuseremail()))
             && (this.getCreate_time() == null ? other.getCreate_time() == null : this.getCreate_time().equals(other.getCreate_time()))
             && (this.getLink_handle_state() == null ? other.getLink_handle_state() == null : this.getLink_handle_state().equals(other.getLink_handle_state()))
             && (this.getLink_message() == null ? other.getLink_message() == null : this.getLink_message().equals(other.getLink_message()));
@@ -87,9 +87,9 @@ public class Email_contact_me {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getLinkCode() == null) ? 0 : getLinkCode().hashCode());
-        result = prime * result + ((getLink_user_name() == null) ? 0 : getLink_user_name().hashCode());
-        result = prime * result + ((getLink_user_email() == null) ? 0 : getLink_user_email().hashCode());
+        result = prime * result + ((getFbCode() == null) ? 0 : getFbCode().hashCode());
+        result = prime * result + ((getFb_user_name() == null) ? 0 : getFb_user_name().hashCode());
+        result = prime * result + ((getFbuseremail() == null) ? 0 : getFbuseremail().hashCode());
         result = prime * result + ((getCreate_time() == null) ? 0 : getCreate_time().hashCode());
         result = prime * result + ((getLink_handle_state() == null) ? 0 : getLink_handle_state().hashCode());
         result = prime * result + ((getLink_message() == null) ? 0 : getLink_message().hashCode());

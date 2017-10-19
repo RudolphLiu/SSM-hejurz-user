@@ -111,6 +111,7 @@
  <!-- 轮播横幅end -->
  
  <!-- 服务简介begin -->
+
  <section id="services">
         <div class="container">
             <div class="box first">
@@ -162,30 +163,30 @@
         <li class="portfolio-item">
           <div class="item-inner">
           	<h4>服务器</h4>
-            <a href="<%=basePath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">机架式服务器</a>
-            <a href="<%=basePath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">直立式服务器</a>
-            <a href="<%=basePath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">存储式服务器</a>
-            <a href="<%=basePath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">刀片式服务器</a>
+            <a href="<%=contextPath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">机架式服务器</a>
+            <a href="<%=contextPath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">直立式服务器</a>
+            <a href="<%=contextPath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">存储式服务器</a>
+            <a href="<%=contextPath %>/server/serverlist.hjrz" class="button button-small-caps button-primary">刀片式服务器</a>
           </div>
         </li>
         <!--/.portfolio-item-->
         <li class="portfolio-item">
           <div class="item-inner">
           	<h4>工作站</h4>
-            <a href="" class="button button-uppercase button-primary">英特尔工作站</a>
-            <a href="" class="button button-uppercase button-primary">AMD工作站</a>
-            <a href="" class="button button-uppercase button-primary">高性能工作站</a>
-            <a href="" class="button button-uppercase button-primary">GPU工作站</a>
+            <a href="<%=contextPath %>/workstation/workstation.hjrz" class="button button-uppercase button-primary">英特尔工作站</a>
+            <a href="<%=contextPath %>/workstation/workstation.hjrz" class="button button-uppercase button-primary">AMD工作站</a>
+            <a href="<%=contextPath %>/workstation/workstation.hjrz" class="button button-uppercase button-primary">高性能工作站</a>
+            <a href="<%=contextPath %>/workstation/workstation.hjrz" class="button button-uppercase button-primary">GPU工作站</a>
           </div>
         </li>
         <!--/.portfolio-item-->
         <li class="portfolio-item">
           <div class="item-inner">
           	<h4>电脑相关</h4>
-            <a href="" class="button button-uppercase button-primary">整机</a>
-            <a href="" class="button button-uppercase button-primary">笔记本</a>
-            <a href="" class="button button-uppercase button-primary">显示器</a>
-            <a href="" class="button button-uppercase button-primary">显卡</a>
+            <a href="<%=contextPath %>/Hardwares/Hardwares.hjrz" class="button button-uppercase button-primary">整机</a>
+            <a href="<%=contextPath %>/Hardwares/Hardwares.hjrz" class="button button-uppercase button-primary">笔记本</a>
+            <a href="<%=contextPath %>/Hardwares/Hardwares.hjrz" class="button button-uppercase button-primary">显示器</a>
+            <a href="<%=contextPath %>/Hardwares/Hardwares.hjrz" class="button button-uppercase button-primary">显卡</a>
           </div>
         </li>
         <!--/.portfolio-item-->
@@ -362,23 +363,23 @@
           <h1>通知我们</h1>
           <p>请将您的需求、建议发送给我们，留下您的电子邮箱，在我们收到之后会给您回复</p>
           <div class="status alert alert-success" style="display: none"></div>
-          <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="<%=basePath %>userContact/insertFeedBack.hjrz" role="form">
+          <form id="main-contact-form" class="contact-form">
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
-                  <input type="text" class="form-control" required="required" placeholder="如何称呼您" style="color:#fff" name="link_user_name">
+                  <input type="text" id="sendfb_username" class="form-control" required="required" placeholder="如何称呼您" style="color:#fff">
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
-                  <input type="text" class="form-control" required="required" placeholder="您的电子邮箱" style="color:#fff" name="link_user_email">
+                  <input type="text" id="sendfb_email" class="form-control" required="required" placeholder="您的电子邮箱" style="color:#fff">
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12">
                 <div class="form-group">
-                  <textarea name="message" id="message" required class="form-control" rows="8" placeholder="请输入信息"  style="color:#fff;resize:none" ></textarea>
+                  <textarea id="fb_message" required class="form-control" rows="8" placeholder="请输入信息"  style="color:#fff;resize:none" ></textarea>
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-danger btn-lg">发送</button>
@@ -424,5 +425,7 @@
     </div>
   </div>
 </footer>
+
+<script type="text/javascript" src="/js/sys/indexpage.js"></script>
 </body>
 </html>
