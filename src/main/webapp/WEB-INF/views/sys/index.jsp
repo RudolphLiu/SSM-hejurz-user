@@ -382,7 +382,7 @@
                   <textarea id="fb_message" required class="form-control" rows="8" placeholder="请输入信息"  style="color:#fff;resize:none" ></textarea>
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-danger btn-lg">发送</button>
+                  <button id="sendfb" type="button" class="btn btn-danger btn-lg">发送</button>
                 </div>
               </div>
             </div>

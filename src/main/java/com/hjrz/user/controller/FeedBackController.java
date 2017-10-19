@@ -1,6 +1,7 @@
 package com.hjrz.user.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hjrz.user.data.ExchangeData;
-import com.hjrz.user.entity.Feedback;
+import com.hjrz.user.form.FeedbackForm;
 import com.hjrz.user.service.FeedBackService;
 
 @Controller
@@ -28,12 +29,13 @@ public class FeedBackController {
 	 * @version 1.0
 	 */
 	@SuppressWarnings("rawtypes")
-	@RequestMapping(value="/sendfeedback.hjrz",method= RequestMethod.POST,produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public @ResponseBody ExchangeData sendFeedBack(@RequestBody Feedback feedback,HttpServletRequest request)
+	@RequestMapping(value="/sendfeedback.hjrz",produces = {MediaType.APPLICATION_JSON_UTF8_VALUE},
+		      method = {RequestMethod.POST})
+	public @ResponseBody ExchangeData sendFeedBack(@RequestBody FeedbackForm feedbackForm,HttpServletRequest request)
 	{
 		ExchangeData<Object> exchangeData = new ExchangeData<Object>();
 		try {
-			feedBackService.sendFeedBack(feedback);
+			feedBackService.sendFeedBack(feedbackForm);
 		} catch (Exception e) {
 			exchangeData.markFail("发送反馈失败");
 		}

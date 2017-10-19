@@ -2,6 +2,8 @@ package com.hjrz.user.entity;
 
 import java.util.Date;
 
+import com.hjrz.user.constants.FeedBackEnum;
+
 public class Feedback {
     private Long fbCode;
 
@@ -11,7 +13,7 @@ public class Feedback {
 
     private Date create_time;
 
-    private String link_handle_state;
+    private FeedBackEnum link_handle_state;
 
     private String link_message;
 
@@ -46,16 +48,16 @@ public class Feedback {
     public void setCreate_time(Date create_time) {
         this.create_time = create_time;
     }
+    
+    public FeedBackEnum getLink_handle_state() {
+		return link_handle_state;
+	}
 
-    public String getLink_handle_state() {
-        return link_handle_state;
-    }
+	public void setLink_handle_state(FeedBackEnum link_handle_state) {
+		this.link_handle_state = link_handle_state;
+	}
 
-    public void setLink_handle_state(String link_handle_state) {
-        this.link_handle_state = link_handle_state == null ? null : link_handle_state.trim();
-    }
-
-    public String getLink_message() {
+	public String getLink_message() {
         return link_message;
     }
 
