@@ -12,8 +12,6 @@ public class LoginUserForm {
     
     private String user_password;
     
-    private String cookie_savetime;
-
     public String getUser_login_phone() {
       return user_login_phone;
     }
@@ -29,13 +27,4 @@ public class LoginUserForm {
     public void setUser_password(String user_password) {
       this.user_password = user_password;
     }
-
-    public String getCookie_savetime() {
-      return cookie_savetime;
-    }
-
-    public void setCookie_savetime(String cookie_savetime) {
-      this.cookie_savetime = cookie_savetime;
-    }
-    
 }

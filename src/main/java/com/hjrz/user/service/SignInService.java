@@ -9,6 +9,7 @@ import com.hjrz.user.entity.User_basic_info;
 import com.hjrz.user.entity.User_detail_info;
 import com.hjrz.user.exception.SYSException;
 import com.hjrz.user.exception.SignException;
+import com.hjrz.user.util.EncryptUtil;
 
 /**
  * @ClassName SignInService
@@ -43,8 +44,13 @@ public class SignInService {
          * @author RudolphLiu
          * @Date 2017年5月30日 上午12:09:48
          */
-        public void signInfo(User_basic_info user_basic_info,User_detail_info user_detail_info)throws SignException,Exception
+        public void signInfo(User_basic_info user_basic_info,User_detail_info user_detail_info)
+        		throws SignException,Exception
         {
+        	//加密当前用户输入的密码
+        	String encryptPassword = EncryptUtil.getMD5String(user_basic_info.getUser_password());
+        	//再重新存入到当前对象中
+        	user_basic_info.setUser_password(encryptPassword);
             user_basic_infoMapper.insert(user_basic_info);
             user_detail_info.setUser_basic_Code(user_basic_info.getUser_basic_Code());
             user_detail_infoMapper.insert(user_detail_info);

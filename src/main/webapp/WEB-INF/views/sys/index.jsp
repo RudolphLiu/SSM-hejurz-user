@@ -7,7 +7,6 @@
 <%@include file="../common/share_static.jsp" %>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/main.css" />
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/carousel.css" />
-<link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/signinfo.css"/>
 <script type="text/javascript" src="<%=contextPath %>/js/main.js" ></script>
 </head>
 <body data-spy="scroll" data-target="#navbar">
@@ -20,7 +19,7 @@
         <a class="navbar-brand" href="/common/home/index.hjrz"><img src="<%=contextPath %>/images/hjrzlogo.png" style="width: 190px; height: 47px;"></a> </div>
 	      <div class="collapse navbar-collapse">
 			        <ul class="nav navbar-nav">
-			          <li class="active"> <a href="#myCarousel">首页</a> </li>
+			          <li class="active"><a href="#myCarousel">首页</a></li>
 			          <li> <a href="#services">服务简介</a> </li>
 			          <li> <a href="#portfolio">硬件产品</a> </li>
 			          <li> <a href="#pricing">软件产品</a> </li>
@@ -28,50 +27,45 @@
 			          <li> <a href="#contact">联系我们</a> </li>
 			        </ul>
 	        </div>
-    </div>
+	        
       <c:choose>
-        	<c:when test="${empty user_basic_info.user_login_phone}">
-        	<div class="userbtn">
-        		<div class="dropdown">
-					<a href="<%=basePath %>login/touserlogin.hjrz" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
-				</div>
+        	<c:when test="${empty userdata.user_basic_Code}">
+        	<div class="navbar-button">
+					<a href="<%=basePath %>login.hjrz" class="button button-glow button-border button-rounded button-primary button-small">登录</a>
 			</div>
         	</c:when>
-        	<c:when test="${not empty user_detail_info.user_realname}">
-        		<div class="userbtn">
-        			<div class="dropdown">
+        	<c:when test="${not empty userdata.user_basic_Code}">
+        		<div class="navbar-button">
 							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								${user_detail_info.user_realname}
+								${userdata.user_realname}
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
+								<li><a href="#">个人主页</a></li>
+								<li><a href="#">私信</a></li>
+								<li><a href="#">设置</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="#">Separated link</a></li>
+								<li><a href="#">退出</a></li>
 							</ul>
 					</div>
-        		</div>
         	</c:when>
         	<c:otherwise>
-        		<div class="userbtn">
-        			<div class="dropdown">
+        		<div class="navbar-button">
 							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								${user_basic_info.user_login_phone}
+								${userdata.user_realname}
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
+								<li><a href="#">个人主页</a></li>
+								<li><a href="#">私信</a></li>
+								<li><a href="#">设置</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="#">Separated link</a></li>
+								<li><a href="#">退出</a></li>
 							</ul>
-					</div>
         		</div>
         	</c:otherwise>
         </c:choose>
+       </div>
   </div>
 </header>
 <!-- 导航栏end -->
@@ -266,7 +260,7 @@
         <h2>综合集成解决方案</h2>
         <p class="lead"></p>
       </div>
-     <div id="team-scroller" class="carousel scale">
+     <div id="team-scroller">
         <div class="carousel-inner">
          	<!--context start-->
          	<div class="row">
@@ -392,8 +386,9 @@
         <div class="col-sm-6">
           <h4>公司地址：</h4>
           <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
             	<h3>北京市海淀区大钟寺13号院华杰大厦B座11BI室</h3>
+            	<h3>北京市海淀区北京航空航天大学新主楼D座D504</h3>
             </div>
           </div>
           <h4>联系电话：</h4>

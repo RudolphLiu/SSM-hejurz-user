@@ -3,6 +3,7 @@ package com.hjrz.user.util;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.joda.time.Interval;
@@ -162,6 +163,18 @@ public static final String PATTERN_YYYY_MM_DD = "yyyy-MM-dd";
   public static Date getDate(Date date) {
     DateTime dt = new DateTime(date);
     return DateTime.parse(dt.toString(PATTERN_YYYY_MM_DD)).toDate();
+  }
+
+  /**
+   * 返回当前时间戳 janwen 2015年10月13日 下午3:23:48
+   * 
+   * @return
+   */
+  public static String getNowTimestamp(String pattern) {
+    if (StringUtils.isBlank(pattern)) {
+      pattern = YYYYMMDDHHMMssSSS;
+    }
+    return new DateTime(new Date()).toString(pattern);
   }
 
   

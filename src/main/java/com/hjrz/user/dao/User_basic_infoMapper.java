@@ -23,5 +23,5 @@ public interface User_basic_infoMapper {
     int selectPhoneAlive(String user_login_phone);
     
     //用户登录
-    User_basic_info userLogin(LoginUserForm loginUserForm);
+    User_basic_info userLogin(User_basic_info user_basic_info);
 }

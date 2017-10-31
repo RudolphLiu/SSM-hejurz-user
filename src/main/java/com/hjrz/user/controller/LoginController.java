@@ -4,10 +4,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hjrz.user.constants.ErrorPages;
 import com.hjrz.user.data.ExchangeData;
@@ -23,7 +25,6 @@ import com.hjrz.user.service.LoginService;
  * @version 1.0.0
  */
 @Controller
-@RequestMapping("/login")
 public class LoginController {
       
       @Autowired
@@ -34,7 +35,7 @@ public class LoginController {
        * @author RudolphLiu
        * @Date 2017年5月31日 上午10:59:55
        */
-      @RequestMapping(value="/touserlogin.hjrz")
+      @RequestMapping(value="/login.hjrz",method=RequestMethod.GET)
       public String touserlogin(HttpServletRequest request,HttpServletResponse response){
           return "users/userlogin";
       }
@@ -44,22 +45,21 @@ public class LoginController {
        * @author RudolphLiu
        * @Date 2017年5月31日 上午10:29:17
        */
-      @RequestMapping(value="/login.hjrz",method=RequestMethod.POST)
-      public ModelAndView login(LoginUserForm loginUserForm,HttpServletRequest request,HttpServletResponse response)
+      @SuppressWarnings("rawtypes")
+      @RequestMapping(value="/logininit.hjrz",produces = {MediaType.APPLICATION_JSON_UTF8_VALUE},
+    	      method = {RequestMethod.POST})
+      public @ResponseBody ExchangeData login(@RequestBody LoginUserForm loginUserForm,
+    		  HttpServletRequest request,HttpServletResponse response)
       {
-        ModelAndView modelAndView = new ModelAndView();
-        ExchangeData<Object> exchangeData = new ExchangeData<Object>();
-        try {
-             loginService.userLogin(loginUserForm, request, response);
-             exchangeData.markSuccess("登录成功!");
-             modelAndView.setViewName("sys/index");
-        }catch (LoginException e) {
-            exchangeData.markException(e.getMessage(),e);
-        }catch (Exception e) {
-          exchangeData.markException(e);
-        } 
-        modelAndView.addObject("exchangeData",exchangeData);
-        return modelAndView;
+    	  ExchangeData<Object> exchangeData = new ExchangeData<Object>();
+    	  	try {
+    	  		loginService.userLogin(loginUserForm, request, response);
+			  } catch (LoginException e){
+	            exchangeData.markException(e.getMessage(),e);
+	          } catch (Exception e) {
+	            exchangeData.markException("系统错误，请联系管理员", e);
+	          }
+    	  return exchangeData;
       }
       
       /**
@@ -69,11 +69,11 @@ public class LoginController {
        */
       public String logout(HttpServletRequest request,HttpServletResponse response){
          try {
-           loginService.logout(request, response);
+        	 loginService.logout(request, response);
         } catch (Exception e) {
-          return ErrorPages.PAGE_500;
+        	return ErrorPages.PAGE_500;
         }
-         return "redirect:/home/index.hjrz";
+         	return "redirect:/common/home/index.hjrz";
       }
       
 }

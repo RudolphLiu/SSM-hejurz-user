@@ -17,6 +17,8 @@ public class User_basic_info {
 
     private Date last_login_time;
 
+    private User_detail_info user_detail_info;
+    
     public Integer getUser_basic_Code() {
         return user_basic_Code;
     }
@@ -64,8 +66,15 @@ public class User_basic_info {
     public void setLast_login_time(Date last_login_time) {
         this.last_login_time = last_login_time;
     }
+    public User_detail_info getUser_detail_info() {
+		return user_detail_info;
+	}
 
-    @Override
+	public void setUser_detail_info(User_detail_info user_detail_info) {
+		this.user_detail_info = user_detail_info;
+	}
+
+	@Override
     public boolean equals(Object that) {
         if (this == that) {
             return true;

@@ -1,18 +1,22 @@
-.signform{
-	margin-left:200px;
-	margin-right:200px;
-}
 .hru{
 	height:10px;
 	border:none;
-	border-top:10px groove skyblue;
+	border-top:8px groove skyblue;
 }
-.textform{
-	margin-left: 150px; 
-	margin-right: 150px;
+.container{
+	margin-top: 20px;
 }
-.userbtn{
-	float:right;
-	margin-top:-75px;
-	margin-right:40px;
+.form-horizontal{
+	padding-top: 30px;
+	padding-right: 20px;
+	border-right: 2px solid #D3D3D3 ; 
+}
+.otherright
+{
+	padding-top: 30px;
+	padding-left:15px;
+	padding-right: 20px;
+}
+.otherright a,b{
+	display:block;
 }

@@ -365,7 +365,12 @@ a:focus {
 .navbar-default .navbar-nav > li:hover > a:focus{
 	background-color: #7cc9f1;
 }
-
+.navbar-button
+{
+	position: fixed;
+	top:25px;
+	right:25%;
+}
 .icon-lg {
   font-size: 48px;
   height: 108px;

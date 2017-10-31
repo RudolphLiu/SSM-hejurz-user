@@ -1,5 +1,7 @@
 package com.hjrz.user.form;
 
+import com.hjrz.user.constants.GenderEnum;
+
 /**
  * @ClassName SignUserForm
  * @Description TODO(这里用一句话描述这个类的作用)
@@ -46,11 +48,11 @@ public class SignUserForm {
       }
 
       public String getUser_sex() {
-        return user_sex;
+		return user_sex;
       }
 
       public void setUser_sex(String user_sex) {
-        this.user_sex = user_sex;
+		this.user_sex = user_sex;
       }
 
       public String getUser_realname() {

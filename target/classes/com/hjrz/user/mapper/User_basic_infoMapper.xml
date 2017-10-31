@@ -8,6 +8,14 @@
     <result column="user_info_state" property="user_info_state" jdbcType="VARCHAR" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
     <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
     <result column="last_login_time" property="last_login_time" jdbcType="TIMESTAMP" />
+    <association property="user_detail_info" javaType="com.hjrz.user.entity.User_detail_info">
+    	<id column="user_detail_Code" property="user_detail_Code"></id>
+    	<result column="user_basic_Code" property="user_basic_Code"/>
+    	<result column="user_email" property="user_email"/>
+    	<result column="user_realname" property="user_realname"/>
+    	<result column="user_sex" property="user_sex"/>
+    	<result column="user_address" property="user_address"/>
+    </association>
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -129,11 +137,24 @@
   </select>
   
    <select id="userLogin" resultMap="BaseResultMap" parameterType="com.hjrz.user.entity.User_basic_info" >
-    select 
-    <include refid="Base_Column_List" />
-    from user_basic_info
-    where user_login_phone = #{user_login_phone,jdbcType=VARCHAR} 
-    and user_password = #{user_password,jdbcType=VARCHAR} 
+		   select 
+			bs.user_basic_Code,
+			bs.user_login_phone,
+			bs.user_password,
+			bs.user_info_state,
+			bs.create_time,
+			bs.last_login_time,
+			dt.user_email,
+			dt.user_realname,
+			dt.user_sex,
+			dt.user_address
+		from 
+			user_basic_info bs
+		LEFT JOIN user_detail_info dt ON bs.user_basic_Code = dt.user_basic_Code
+		WHERE 
+		bs.user_login_phone= #{user_login_phone,jdbcType=VARCHAR}  
+		and 
+		bs.user_password = #{user_password,jdbcType=VARCHAR} 
   </select>
   
   <update id="updateByPrimaryKeySelective" parameterType="com.hjrz.user.entity.User_basic_info" >

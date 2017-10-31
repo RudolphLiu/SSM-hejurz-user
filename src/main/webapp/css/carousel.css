@@ -1,6 +1,6 @@
 
 /* Carousel base class */
-.carousel {
+#myCarousel {
   height: 570px;
 }
 /* Declare heights because of positioning of img element */
@@ -9,7 +9,7 @@
   z-index: 200;
 }
 
-.carousel .item {
+#myCarousel .item {
   height: 570px;
 }
 .carousel-inner > .item > img {
